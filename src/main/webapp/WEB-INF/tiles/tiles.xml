@@ -1,0 +1,47 @@
+<!DOCTYPE tiles-definitions PUBLIC "-//Apache Software Foundation//DTD Tiles Configuration 3.0//EN" "http://tiles.apache.org/dtds/tiles-config_3_0.dtd">
+<tiles-definitions>
+    
+    <!-- ************* Main template definition -->
+    <definition name="main" template="/WEB-INF/view/template/mainTemplate.jsp">
+        <put-attribute name="header" value="/WEB-INF/view/template/header.jsp" />
+        <put-attribute name="footer" value="/WEB-INF/view/template/footer.jsp" />
+    </definition>
+
+    
+    <!-- ************* Simple template definition -->
+
+    
+
+    <!-- ************* General  -->
+    
+    
+    <definition name="home" extends="main">
+		<put-attribute name="content" value="/WEB-INF/view/content/home.jsp" />  
+    </definition>
+    
+     <definition name="featured" extends="main">
+		<put-attribute name="content" value="/WEB-INF/view/content/featured.jsp" />  
+    </definition>
+    
+     <definition name="gallery" extends="main">
+		<put-attribute name="content" value="/WEB-INF/view/content/gallery.jsp" />  
+    </definition>
+    
+    <definition name="singleGallery" extends="main">
+		<put-attribute name="content" value="/WEB-INF/view/content/singleGallery.jsp" />  
+    </definition>
+    
+    
+     <definition name="contact" extends="main">
+		<put-attribute name="content" value="/WEB-INF/view/content/contact.jsp" />  
+    </definition>
+    
+	<definition name="links" extends="main">
+		<put-attribute name="content" value="/WEB-INF/view/content/links.jsp" />  
+    </definition>
+    
+    <!-- ************** Errors -->
+    
+
+    
+</tiles-definitions>

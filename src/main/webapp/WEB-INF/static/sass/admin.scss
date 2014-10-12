@@ -1,0 +1,114 @@
+
+
+@import "mixins.scss";
+
+html, body {
+	font-family: 'Noto Sans', sans-serif;
+	
+}
+
+body {
+	padding-top: 70px;
+}
+
+h1 {
+	font-size: 20px;
+}
+
+.table-form {
+	form {
+		float: left;
+		
+		&:first-child {
+			margin-right: 15px;
+		}
+	}
+}
+
+.form-signin {
+    margin: 0 auto;
+    max-width: 330px;
+    padding: 15px;
+}
+
+.form-signin input[type="text"] {
+    border-bottom-left-radius: 0;
+    border-bottom-right-radius: 0;
+    margin-bottom: -1px;
+}
+
+.form-signin input[type="password"] {
+    border-top-left-radius: 0;
+    border-top-right-radius: 0;
+    margin-bottom: 10px;
+}
+
+.form-signin .form-control {
+    box-sizing: border-box;
+    font-size: 16px;
+    height: auto;
+    padding: 10px;
+    position: relative;
+}
+
+.form-signin-heading {
+	padding-bottom: 12px;
+}
+
+ul.nav {
+	li {
+		@include transition(all, 0.2s, ease-in-out);
+		&:hover {
+			/*background: #1f2332;*/
+			background: #e7e7e7;
+		}
+		
+		> a {
+
+			&:hover {
+			
+			}
+		}
+		
+		a.dropdown-toggle {
+			
+			
+			&:hover,&:focus {
+			
+			}
+		}
+	}
+}
+
+.container {
+	max-width: 970px !important;
+}
+
+.admin-panel {
+
+	h1 {
+		padding-bottom: 16px;
+	}
+	
+	.button-feature {
+		background: rgba(0,0,0,0);
+		border: 0px;
+		box-shadow: none;
+	}
+
+}
+
+input[type="file"].form-control {
+	padding: 0px;
+}
+
+.file-uploaded {
+	margin-bottom: 20px;
+	width: 200px;
+}
+
+.button-feature, .button-visible {
+	background: rgba(0,0,0,0);
+	border: 0px;
+	box-shadow: none;
+}

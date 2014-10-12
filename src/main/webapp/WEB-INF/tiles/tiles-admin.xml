@@ -1,0 +1,57 @@
+<!DOCTYPE tiles-definitions PUBLIC "-//Apache Software Foundation//DTD Tiles Configuration 3.0//EN" "http://tiles.apache.org/dtds/tiles-config_3_0.dtd">
+<tiles-definitions>
+    
+    <!-- ************* Main template definition -->
+    <definition name="admin" template="/WEB-INF/view/admin/template/mainTemplate.jsp">
+        <put-attribute name="header" value="/WEB-INF/view/admin/template/header.jsp" />
+        <put-attribute name="footer" value="/WEB-INF/view/admin/template/footer.jsp" />
+    </definition>
+
+    
+    <!-- ************* Simple template definition -->
+
+    
+
+    <!-- ************* General  -->
+    <definition name="adminHome" extends="admin">
+		<put-attribute name="content" value="/WEB-INF/view/admin/action/home.jsp" />  
+    </definition>
+
+	<definition name="adminShow" extends="admin">
+		<put-attribute name="content" value="/WEB-INF/view/admin/action/show.jsp" />  
+    </definition>
+    
+    <definition name="adminAdd" extends="admin">
+		<put-attribute name="content" value="/WEB-INF/view/admin/action/add.jsp" />  
+    </definition>
+    
+    <definition name="articleView" extends="admin">
+		<put-attribute name="content" value="/WEB-INF/view/admin/action/view.jsp" />  
+    </definition>
+    
+    <definition name="categoryList" extends="admin">
+		<put-attribute name="content" value="/WEB-INF/view/admin/action/categoryList.jsp" />  
+    </definition>
+    
+    <definition name="categoryAdd" extends="admin">
+		<put-attribute name="content" value="/WEB-INF/view/admin/action/categoryAdd.jsp" />  
+    </definition>
+    
+    <definition name="photoList" extends="admin">
+		<put-attribute name="content" value="/WEB-INF/view/admin/action/photoList.jsp" />  
+    </definition>
+    
+    <definition name="photoAdd" extends="admin">
+		<put-attribute name="content" value="/WEB-INF/view/admin/action/photoAdd.jsp" />  
+    </definition>
+    
+    <definition name="login" template="/WEB-INF/view/admin/login.jsp">
+		
+    </definition>
+    
+    <!-- ************** Errors -->
+    
+
+    
+</tiles-definitions>
+
