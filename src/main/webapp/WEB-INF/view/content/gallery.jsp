@@ -19,7 +19,7 @@
 		<div class="col-md-4 gallery-item">
 			<a href="${contextPath}/gallery/${gallery.category.id}" >
 				
-				<img src="${contextPath}/photos/${gallery.image.src}" />
+				<img src="${contextPath}/photos/${gallery.photo.src}" />
 				
 				<div class="gallery-desc">
 					<span>${gallery.category.name}</span>

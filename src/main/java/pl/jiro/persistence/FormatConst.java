@@ -1,7 +1,7 @@
 package pl.jiro.persistence;
 
 /**
- * @author £ukasz Pawe≥czak
+ * @author ≈Åukasz Pawe≈Çczak
  */
 public class FormatConst {
 

@@ -30,8 +30,8 @@
 		<put-attribute name="content" value="/WEB-INF/view/content/gallery.jsp" />  
     </definition>
     
-    <definition name="singleGallery" extends="main">
-		<put-attribute name="content" value="/WEB-INF/view/content/singleGallery.jsp" />  
+    <definition name="galleryDetail" extends="main">
+		<put-attribute name="content" value="/WEB-INF/view/content/galleryDetail.jsp" />  
     </definition>
     
     
