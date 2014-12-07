@@ -4,12 +4,13 @@
 <!DOCTYPE HTML>
 <html class="no-js" >
   <head>
+    
     <c:set var="contextPath" value="${pageContext.request.contextPath}" scope="session"></c:set>  
-    <c:set var="DATE_PATTERN" value="dd.MM.yyyy" scope="session"></c:set>  
+    
 	
-    <%@include file="/WEB-INF/view/admin/static/css.jsp"%>
-    <%@include file="/WEB-INF/view/common/javascript.jsp"%>
-    <%@include file="/WEB-INF/view/common/meta.jsp"%>
+    <%@ include file="/WEB-INF/view/admin/static/css.jsp"%>
+    <%@ include file="/WEB-INF/view/common/javascript.jsp"%>
+    <%@ include file="/WEB-INF/view/common/meta.jsp"%>
     
     <title>Fotografia Waldemar Pawelczak</title>
 

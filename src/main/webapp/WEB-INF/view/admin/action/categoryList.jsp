@@ -43,8 +43,8 @@
 		<td>${status.index + 1}</td>
 		<td>${category.name}</td>
 		<td></td>
-		<td>${category.addDate}</td>
-		<td>${category.modDate}</td>
+		<td></td>
+		<td></td>
 		<td>${category.description}</td>
 		<!--  <td></td> -->
 		<td class="table-form" >

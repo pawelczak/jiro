@@ -8,6 +8,9 @@
     </definition>
 
     
+    <definition name="test" template="/WEB-INF/view/home.jsp">
+    </definition>
+    
     <!-- ************* Simple template definition -->
 
     

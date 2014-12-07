@@ -30,4 +30,10 @@ public class SiteController {
         
         return "links";
     }
+    
+    @RequestMapping("/test")
+    public String test(ModelMap model) {
+        
+        return "test";
+    }
 }
