@@ -12,8 +12,8 @@ import pl.jiro.persistence.model.Photo;
 import pl.jiro.persistence.repository.CategoryRepository;
 import pl.jiro.persistence.repository.PhotoRepository;
 
-/*
- * @author £ukasz Pawe≥czak
+/**
+ * @author ≈Åukasz Pawe≈Çczak
  */
 @Service
 public class GalleryListService {

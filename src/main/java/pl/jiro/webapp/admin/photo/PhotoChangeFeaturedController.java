@@ -9,6 +9,7 @@ import org.springframework.web.bind.annotation.SessionAttributes;
 
 import pl.jiro.persistence.model.Photo;
 import pl.jiro.persistence.repository.PhotoRepository;
+import pl.jiro.webapp.admin.photo.services.PhotoService;
 
 /**
  * @author Łukasz Pawełczak
@@ -17,9 +18,12 @@ import pl.jiro.persistence.repository.PhotoRepository;
 @SessionAttributes("sessionCid")
 public class PhotoChangeFeaturedController {
 
+	
 	@Autowired
 	private PhotoRepository photoRepository;
 	
+	@Autowired
+	private PhotoService photoService;
 	
 	//------------------------ LOGIC --------------------------
 	
@@ -27,13 +31,7 @@ public class PhotoChangeFeaturedController {
 	public String featurePhoto(@RequestParam long id, @RequestParam boolean status, Model model) {
 		Photo photo = photoRepository.getPhotoById(id);
 		
-		photo.setFeatured(status);
-		
-		if (status) {
-			photo.setVisible(true);
-		}
-		
-		photoRepository.editPhoto(photo);
+		photoService.setFeaturedStatus(photo, status);
 		
 		return "redirect:/admin/photoList/" + String.valueOf(photo.getCid());
 	}

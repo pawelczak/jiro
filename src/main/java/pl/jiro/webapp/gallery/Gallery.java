@@ -3,8 +3,8 @@ package pl.jiro.webapp.gallery;
 import pl.jiro.persistence.model.Category;
 import pl.jiro.persistence.model.Photo;
 
-/*
- * @author £ukasz Pawe≥czak
+/**
+ * @author ≈Åukasz Pawe≈Çczak
  */
 public class Gallery {
 	

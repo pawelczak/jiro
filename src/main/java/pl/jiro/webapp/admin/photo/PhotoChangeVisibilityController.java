@@ -6,8 +6,10 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.SessionAttributes;
+
 import pl.jiro.persistence.model.Photo;
 import pl.jiro.persistence.repository.PhotoRepository;
+import pl.jiro.webapp.admin.photo.services.PhotoService;
 
 /**
  * @author Łukasz Pawełczak
@@ -19,6 +21,8 @@ public class PhotoChangeVisibilityController {
 	@Autowired
 	private PhotoRepository photoRepository;
 	
+	@Autowired
+	private PhotoService photoService;
 	
 	//------------------------ LOGIC --------------------------
 	
@@ -26,8 +30,7 @@ public class PhotoChangeVisibilityController {
 	public String visilePhoto(@RequestParam long id, @RequestParam boolean visibility, Model model) {
 		Photo photo = photoRepository.getPhotoById(id);
 		
-		photo.setVisible(visibility);
-		photoRepository.editPhoto(photo);
+		photoService.setVisibility(photo, visibility);
 
 		return "redirect:/admin/photoList/" + String.valueOf(photo.getCid());
 	}

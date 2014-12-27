@@ -19,10 +19,10 @@ import pl.jiro.persistence.repository.CategoryRepository;
  */
 @Controller
 public class CategoryAddController {
+
 	
 	@Autowired
 	private CategoryRepository categoryRepository;
-	
 	
 	//------------------------ LOGIC --------------------------
 	

@@ -1,6 +1,5 @@
 package pl.jiro.webapp.admin.photo;
 
-import java.io.File;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Controller;
@@ -9,8 +8,9 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.SessionAttributes;
-import pl.jiro.persistence.model.Photo;
+
 import pl.jiro.persistence.repository.PhotoRepository;
+import pl.jiro.webapp.admin.photo.services.PhotoService;
 
 /**
  * @author Łukasz Pawełczak
@@ -25,42 +25,22 @@ public class PhotoDeleteController {
 	@Autowired
 	private PhotoRepository photoRepository;
 	
+	@Autowired
+	private PhotoService photoService;
+	
 	
 	//------------------------ LOGIC --------------------------
 	
 	@RequestMapping(value="/admin/deletePhoto", method=RequestMethod.POST)
 	public String deletePhoto(@RequestParam long id, Model model) {
 		
-		Photo photo = photoRepository.getPhotoById(id);
-		long categoryId = photo.getCid();
-		photoRepository.deletePhoto(photo);
-		
-		deleteImage(getImagePath(photo.getId()));
-		
+		photoService.delete(photoRepository.getPhotoById(id));
+
 		model.addAttribute("actionResponse", "deleteSuccess");
 		
-		return "redirect:/admin/photoList/" + String.valueOf(categoryId);
+		return "redirect:/admin/photoList/" + String.valueOf(id);
 	}
 	
 	
-	//------------------------ PRIVATE --------------------------
-	
-	private String getImagePath(long id) {
-		return webContext + id + ".jpg";
-	}
-	
-	private void deleteImage(String filename) {
-		try {
-			 
-    		File file = new File(filename);
- 
-    		if(file.delete()){
-    			System.out.println(file.getName() + " is deleted!");
-    		} else {
-    			System.out.println("Delete operation is failed.");
-    		}
-    	} catch(Exception e){
-    		e.printStackTrace();
-    	}
-	}
+
 }

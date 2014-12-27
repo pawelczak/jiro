@@ -80,10 +80,10 @@ public class PhotoRepository {
 	}
 	
 	@Transactional
-	public void deletePhotosInCategory(String id) {
+	public void deletePhotosInCategory(long id) {
 		Session session = sessionFactory.getCurrentSession();
 		Query query = session.createQuery("from Photo where cid = :categoryId");
-		query.setParameter("categoryId", Long.parseLong(id));
+		query.setParameter("categoryId", id);
 		List<Photo> photos = query.list();
 		
 		for(Photo photo: photos) {

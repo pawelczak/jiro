@@ -1,14 +1,10 @@
 package pl.jiro.webapp.admin.photo;
 
-import java.io.File;
-import java.io.IOException;
 import java.util.List;
 
 import javax.validation.Valid;
 
-import org.apache.commons.io.FileUtils;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
@@ -25,6 +21,7 @@ import pl.jiro.persistence.model.Photo;
 import pl.jiro.persistence.repository.CategoryRepository;
 import pl.jiro.persistence.repository.PhotoRepository;
 import pl.jiro.photo.ImageUploadException;
+import pl.jiro.webapp.admin.photo.services.PhotoService;
 
 /**
  * @author Łukasz Pawełczak
@@ -33,14 +30,15 @@ import pl.jiro.photo.ImageUploadException;
 @SessionAttributes("sessionCid")
 public class PhotoAddController {
 
-	@Value("${jiro.photo.path}")
-	private String webContext;
 	
 	@Autowired
 	private CategoryRepository categoryRepository;
 	
 	@Autowired
 	private PhotoRepository photoRepository;
+	
+	@Autowired
+	private PhotoService photoService;
 	
 	
 	//------------------------ LOGIC --------------------------
@@ -85,22 +83,13 @@ public class PhotoAddController {
             return "photoAdd";
         }
 		
-		photo.setSrc(" ");
-		photoRepository.addPhoto(photo);
-		
 		try {
-			if (!image.isEmpty()) {
-				validateImage(image);
-				saveImage(webContext + photo.getId() + ".jpg", image);
-				photo.setSrc(photo.getId() + ".jpg");
-			}
+			photoService.add(photo, image);
 		} catch (ImageUploadException e) {
 			bindingResult.reject(e.getMessage());
 			model.addAttribute("formHeader", "add");
 			return "photoAdd";
 		}
-		
-		photoRepository.editPhoto(photo);
 		
 		model.addAttribute("actionResponse", "addSuccess");
 		
@@ -117,44 +106,17 @@ public class PhotoAddController {
             return "photoAdd";
         }
 		
-		photo.setSrc(" ");
-		photoRepository.addPhoto(photo);
-		
 		try {
-			if (!image.isEmpty()) {
-				validateImage(image);
-				saveImage(webContext + photo.getId() + ".jpg", image);
-				photo.setSrc(photo.getId() + ".jpg");
-			}
+			photoService.add(photo, image);
 		} catch (ImageUploadException e) {
 			bindingResult.reject(e.getMessage());
 			model.addAttribute("formHeader", "add");
 			return "photoAdd";
 		}
 		
-		photoRepository.editPhoto(photo);
-		
 		model.addAttribute("actionResponse", "addSuccess");
 		
-		return "redirect:/admin/addPhoto/" + categoryId;
-	}
-	
-	
-	//------------------------ PRIVATE --------------------------
-
-	private void validateImage(MultipartFile image) {
-		if (!image.getContentType().equals("image/jpeg")) {
-			throw new ImageUploadException("Nieakceptowane pliki jpeg");
-		}
-	}
-	
-	private void saveImage(String filename, MultipartFile image) throws ImageUploadException {
-		try {
-			File file = new File (filename);
-			FileUtils.writeByteArrayToFile(file, image.getBytes());
-		} catch(IOException e) {
-			throw new ImageUploadException("photo.upload.fail");
-		}
 		
+		return "redirect:/admin/addPhoto/" + categoryId;
 	}
 }
