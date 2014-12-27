@@ -15,14 +15,14 @@
           <a data-toggle="dropdown" class="dropdown-toggle" href="#">Kategorie <span class="caret"></span></a>
           <ul role="menu" class="dropdown-menu">
             <li><a href="${contextPath}/admin/addCategory">Dodaj</a></li>
-            <li><a href="${contextPath}/admin/category">Lista</a></li>
+            <li><a href="${contextPath}/admin/categoryList">Lista</a></li>
           </ul>
         </li>
         <li class="dropdown">
           <a data-toggle="dropdown" class="dropdown-toggle" href="#">Fotografie <span class="caret"></span></a>
           <ul role="menu" class="dropdown-menu">
             <li><a href="${contextPath}/admin/addPhoto">Dodaj</a></li>
-            <li><a href="${contextPath}/admin/photo">Lista</a></li>
+            <li><a href="${contextPath}/admin/photoList">Lista</a></li>
           </ul>
         </li>
         <li ><a href="${contextPath}/" target="_blank" >Przejdź do strony</a></li>

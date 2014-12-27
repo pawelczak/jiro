@@ -40,10 +40,10 @@ public class PhotoRepository {
 	
 	
 	@Transactional
-	public List<Photo> findByCategoryId(String id) {
+	public List<Photo> findByCategoryId(int id) {
 		Session session = sessionFactory.getCurrentSession();
 		Query query = session.createQuery("from Photo where cid = :categoryId");
-		query.setParameter("categoryId", Long.parseLong(id));
+		query.setParameter("categoryId", (long)id);
 		List photos = query.list();
 		return photos;
 	}

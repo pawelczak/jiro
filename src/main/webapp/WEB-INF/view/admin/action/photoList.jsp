@@ -23,12 +23,13 @@
 	</c:choose>
 </c:if>
 
+
 <div class="form-group">
 	<div class="col-sm-3 control-label">Zdjęcia z kategorii:</div>
 	<div class="col-sm-5">
 		<select class="form-control" >
 			<c:forEach var="category" items="${categories}" varStatus="status">
-				<option <c:if test="${categoryId == category.id || category.id == sessionCid}"> selected </c:if> onclick="window.location='${contextPath}/admin/photoList/${category.id}'; return false;" >${category.name}</option>
+				<option <c:if test="${categoryId == category.id}"> selected </c:if> onclick="window.location='${contextPath}/admin/photoList/${category.id}'; return false;" >${category.name}</option>
 			</c:forEach>
 		</select>
 	</div>
@@ -37,14 +38,18 @@
 <br><br><br>
 
 
+<div class="form-group">
+	<a class="button" href="${contextPath}/admin/addPhoto/${categoryId}">Dodaj zdjęcie</a>
+</div>
+
 <table class="table table-bordered table-hover">
 	<tr>
 		<th width="20px">#</th>
 		<th>Nazwa</th>
 		<th width="24px"></th>
-		<th width="24px"></th>
+		<th width="24px"><img src="${contextPath}/static/image/icons/visible.png" /></th>
 		<th width="40" >Zdjęcie</th>
-		<th width="60">Opis</th>
+		<th width="160">Opis</th>
 		<th width="150"></th>
 	</tr>
 
@@ -73,9 +78,9 @@
 			</form>
 		</td>
 		<td class="no-padding">
-			<form method="POST" action="${contextPath}/admin/visiblePhoto" id="form-visible-${status.index + 1}" >
+			<form method="POST" action="${contextPath}/admin/photoChangeVisibility" id="form-visible-${status.index + 1}" >
 				<input type="hidden" name="id" value="${photo.id}" />
-				<input type="hidden" name="status" value="${!photo.visible}" />
+				<input type="hidden" name="visibility" value="${!photo.visible}" />
 
 				<c:choose>
 					<c:when test="${photo.visible=='true'}" >

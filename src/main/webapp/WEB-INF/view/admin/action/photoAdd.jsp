@@ -28,7 +28,7 @@
 		    <div class="col-sm-5">
 		    <form:select path="cid" class="form-control">
 		    	<c:forEach var="category" items="${categories}" >
-		    		<option value="${category.id}" ${ photo.cid == category.id || category.id == sessionCid ? 'selected' : '' } >${category.name}</option>
+		    		<option value="${category.id}" ${ photo.cid == category.id || category.id == categoryId ? 'selected' : '' } >${category.name}</option>
 		    	</c:forEach>
 		    </form:select>
 		    </div>
@@ -52,6 +52,12 @@
 		    </div>
 	 	</div>
 	 	<div class="form-group">
+		    <label for="inputName" class="col-sm-2 control-label">Widoczność</label>
+		    <div class="col-sm-10">
+	    	  <form:checkbox path="visible" class="" value="1" ></form:checkbox>
+		    </div>
+	 	</div>
+	 	<div class="form-group">
 		    <label for="inputDesc" class="col-sm-2 control-label">Opis:</label>
 		    <div class="col-sm-6">
 	    	  <form:textarea path="description" class="form-control" id="inputDesc" placeholder="Opis" ></form:textarea>
@@ -60,7 +66,7 @@
 	    <div class="form-group">
 		    <div class="col-sm-offset-2 col-sm-10">
 		      <input type="submit" value="<spring:message code="photo.button.${formHeader}" />" class="btn btn-primary" />
-		      <a href="${contextPath}/admin/photo" class="btn btn-primary">Anuluj</a>
+		      <a href="${contextPath}/admin/photoList/${categoryId}" class="btn btn-primary">Anuluj</a>
 		    </div>
 		</div>
 		

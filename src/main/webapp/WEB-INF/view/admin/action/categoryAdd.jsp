@@ -42,6 +42,7 @@
 	    <div class="form-group">
 		    <div class="col-sm-offset-2 col-sm-10">
 		      <input type="submit" value="<spring:message code='category.button.${formHeader}' />"  class="btn btn-primary" />
+		      <a href="${contextPath}/admin/categoryList" class="btn btn-primary">Anuluj</a>
 		    </div>
 		</div>
 		

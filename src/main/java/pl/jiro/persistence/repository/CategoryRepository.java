@@ -26,7 +26,7 @@ public class CategoryRepository {
 	@Transactional
 	public List<Category> findAll() {
 		Session session = sessionFactory.getCurrentSession();
-		List categories = session.createQuery("from Category").list();
+		List categories = session.createQuery("from Category order by name ASC").list();
 		return categories;
 	}
 	

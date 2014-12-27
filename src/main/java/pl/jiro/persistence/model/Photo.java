@@ -28,9 +28,9 @@ public class Photo extends BasicDataSource {
 	
 	private String src;
 	
-	private boolean featured;
+	private boolean featured = false;
 	
-	private boolean visible;
+	private boolean visible = true;
 	
 	@Size(min=0, max=256, message="Opis fotografii mo�e sk�ada� si� maksymalnie z 256 znak�w.")
 	private String description;
