@@ -6,5 +6,6 @@
 <%--  <%@ taglib  prefix="security" uri="http://www.springframework.org/security/tags" %> --%>
 <%@ taglib  prefix="tiles" uri="http://tiles.apache.org/tags-tiles" %>
 <%@ taglib  prefix="jiro" tagdir="/WEB-INF/tags"%>
+<%@ taglib  prefix="gallery" tagdir="/WEB-INF/tags/gallery"%>
 
 

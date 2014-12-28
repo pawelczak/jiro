@@ -2,9 +2,9 @@
 <tiles-definitions>
     
     <!-- ************* Main template definition -->
-    <definition name="main" template="/WEB-INF/view/template/mainTemplate.jsp">
-        <put-attribute name="header" value="/WEB-INF/view/template/header.jsp" />
-        <put-attribute name="footer" value="/WEB-INF/view/template/footer.jsp" />
+    <definition name="main" template="/WEB-INF/view/site/template/mainTemplate.jsp">
+        <put-attribute name="header" value="/WEB-INF/view/site/template/header.jsp" />
+        <put-attribute name="footer" value="/WEB-INF/view/site/template/footer.jsp" />
     </definition>
 
     
@@ -19,28 +19,28 @@
     
     
     <definition name="home" extends="main">
-		<put-attribute name="content" value="/WEB-INF/view/content/home.jsp" />  
+		<put-attribute name="content" value="/WEB-INF/view/site/content/home.jsp" />  
     </definition>
     
      <definition name="featured" extends="main">
-		<put-attribute name="content" value="/WEB-INF/view/content/featured.jsp" />  
+		<put-attribute name="content" value="/WEB-INF/view/site/content/featured.jsp" />  
     </definition>
     
      <definition name="gallery" extends="main">
-		<put-attribute name="content" value="/WEB-INF/view/content/gallery.jsp" />  
+		<put-attribute name="content" value="/WEB-INF/view/site/content/gallery.jsp" />  
     </definition>
     
     <definition name="galleryDetail" extends="main">
-		<put-attribute name="content" value="/WEB-INF/view/content/galleryDetail.jsp" />  
+		<put-attribute name="content" value="/WEB-INF/view/site/content/galleryDetail.jsp" />  
     </definition>
     
     
      <definition name="contact" extends="main">
-		<put-attribute name="content" value="/WEB-INF/view/content/contact.jsp" />  
+		<put-attribute name="content" value="/WEB-INF/view/site/content/contact.jsp" />  
     </definition>
     
 	<definition name="links" extends="main">
-		<put-attribute name="content" value="/WEB-INF/view/content/links.jsp" />  
+		<put-attribute name="content" value="/WEB-INF/view/site/content/links.jsp" />  
     </definition>
     
     <!-- ************** Errors -->

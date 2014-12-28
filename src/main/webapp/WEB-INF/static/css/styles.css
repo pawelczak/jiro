@@ -172,9 +172,6 @@ footer .sitemap li a {
 .sh-bottom .teaser .contact:hover, .sh-bottom .teaser .contact:focus {
   background-image: url("../image/icons/contacts-blue.png"); }
 
-.sh-last-added {
-  margin: 80px 0px; }
-
 .sh-last-added .added-item {
   background: #fff;
   border-bottom: 3px solid #d6d6d6;
@@ -196,7 +193,7 @@ footer .sitemap li a {
   padding: 12px 8px 16px; }
 
 .sh-last-added .added-item .item-desc {
-  font-size: 16px;
+  font-size: 14px;
   line-height: 1.4em;
   padding: 8px; }
 
@@ -469,3 +466,9 @@ footer .navbar-nav li a {
   font-size: 16px;
   margin-bottom: 20px;
   padding: 10px 15px; }
+
+.gallery-section.container {
+  margin-bottom: 30px;
+  margin-top: 50px; }
+.gallery-section .sh-last-added {
+  margin-top: 40px; }

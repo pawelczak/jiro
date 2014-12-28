@@ -35,7 +35,7 @@
 		<th>Data modyfikacji</th>
 		<th>Opis</th>
 		<!--  <th>Liczba zdjęć</th>  -->
-		<th></th>
+		<th width="140"></th>
 	</tr>
 
 	<c:forEach var="category" items="${categories}" varStatus="status">	

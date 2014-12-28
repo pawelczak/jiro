@@ -13,7 +13,7 @@
 	 --%>
 	
     <%@include file="/WEB-INF/view/common/cssView.jsp"%>
-    <%@include file="/WEB-INF/view/common/javascript.jsp"%>
+    <%@include file="/WEB-INF/view/site/lib/javascript.jsp"%>
     <%@include file="/WEB-INF/view/common/meta.jsp"%>
     
     <title>Fotografia Waldemar Pawelczak</title>

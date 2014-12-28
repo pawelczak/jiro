@@ -28,10 +28,21 @@ public class GalleryListService {
 	//------------------------ LOGIC --------------------------
 	
 	public List<Gallery> listAllGalleries() {
-		
+		return convertCategoriesToGalleries(categoryRepository.findAll());
+	}
+	
+	public List<Gallery> findThreeLastAdded() {
+		return convertCategoriesToGalleries(categoryRepository.findAllOrderId().subList(0, 3));
+	}
+	
+	public List<Gallery> findMostPopular() {
+		return convertCategoriesToGalleries(categoryRepository.findAllOrderPopular().subList(0, 3));
+	}
+	
+	//------------------------ PRIVATE --------------------------
+	
+	private List<Gallery> convertCategoriesToGalleries(List<Category> categories) {
 		List<Gallery> galleries = Lists.newArrayList();
-		
-		List<Category> categories = categoryRepository.findAll();
 		
 		for (Category category : categories) {
 			List<Photo> photos = photoRepository.findVisibleByCategoryId(category.getId());
@@ -44,6 +55,5 @@ public class GalleryListService {
 		}
 		
 		return galleries;
-
 	}
 }

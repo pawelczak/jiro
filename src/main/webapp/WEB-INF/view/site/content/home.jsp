@@ -133,50 +133,9 @@
 
 
 
-<div class="container">
-	<div class="sh-header">
-		<div>Ostatnio dodane</div>
-	</div>
+<gallery:section headerLabel="home.gallery.mostPopular" galleries="${mostPopularGalleries}" ></gallery:section>
+<gallery:section headerLabel="home.gallery.lastAdded" galleries="${lastAddedGalleries}" ></gallery:section>
+ 
+ 
 
-	<div class="sh-last-added row">
-		<div class="col-md-4">
-			<div class="added-item">
-				<div class="item-title">Lorem ipsum</div>
-				<img src="${contextPath}/static/image/2.jpg" />
-				<div class="item-desc">
-					Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam
-				</div>
-				<div class="item-center" >
-					<button class="button">Zobacz</button>
-				</div>
-			</div>
-		</div>
-		<div class="col-md-4">
-			<div class="added-item">
-				<div class="item-title">Lorem ipsum</div>
-				<img src="${contextPath}/static/image/3.jpg" />
-				<div class="item-desc">
-					Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam
-				</div>
-				<div class="item-center" >
-					<button class="button">Zobacz</button>
-				</div>
-			</div>
-		</div>
-		<div class="col-md-4">
-			<div class="added-item">
-				<div class="item-title">Lorem ipsum</div>
-				<img src="${contextPath}/static/image/4.jpg" />
-				<div class="item-desc">
-					Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam
-				</div>
-				<div class="item-center" >
-					<button class="button">Zobacz</button>
-				</div>
-			</div>
-		</div>
-	</div>
-
-
-</div>
-
+ 
