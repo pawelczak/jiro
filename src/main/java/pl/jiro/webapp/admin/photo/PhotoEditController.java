@@ -39,12 +39,13 @@ public class PhotoEditController {
 	@Autowired
 	private PhotoService photoService;
 	
+	
 	//------------------------ LOGIC --------------------------
 	
 	@RequestMapping(value="/admin/editPhoto", method=RequestMethod.GET)
 	public String editPhoto(@RequestParam long id, Model model) {
 		List<Category> categories = categoryRepository.findAll();
-		Photo photo = photoRepository.getPhotoById(id);
+		Photo photo = photoRepository.findPhotoById(id);
 		
 		model.addAttribute("categories", categories);
 		model.addAttribute("formHeader", "edit");

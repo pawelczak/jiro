@@ -5,6 +5,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.RequestMapping;
 
+import pl.jiro.persistence.repository.PreviewPhotoRepository;
 import pl.jiro.webapp.gallery.GalleryListService;
 
 @Controller
@@ -14,6 +15,10 @@ public class HomeController {
 	@Autowired
 	private GalleryListService galleryListService;
 	
+	@Autowired
+	private PreviewPhotoRepository previewPhotoRepository;
+	
+	
 	//------------------------ LOGIC --------------------------
     
     @RequestMapping("/")
@@ -22,6 +27,7 @@ public class HomeController {
     	model.addAttribute("mostPopularGalleries", galleryListService.findMostPopular());
     	model.addAttribute("lastAddedGalleries", galleryListService.findThreeLastAdded());
     	
+    	model.addAttribute("carouselPhotos", previewPhotoRepository.findAllVisible());
         return "home";
     }
 }

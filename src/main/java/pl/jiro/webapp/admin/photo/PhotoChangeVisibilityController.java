@@ -28,7 +28,7 @@ public class PhotoChangeVisibilityController {
 	
 	@RequestMapping("/admin/photoChangeVisibility")
 	public String visilePhoto(@RequestParam long id, @RequestParam boolean visibility, Model model) {
-		Photo photo = photoRepository.getPhotoById(id);
+		Photo photo = photoRepository.findPhotoById(id);
 		
 		photoService.setVisibility(photo, visibility);
 

@@ -82,6 +82,7 @@
    
    <!-- resources exclusions from servlet mapping -->
    <mvc:resources mapping="/photos/**" location="/photos/"/>
+   <mvc:resources mapping="/previewPhotos/**" location="/previewPhotos/"/>
    <mvc:resources mapping="/static/**" location="/WEB-INF/static/"/>
    
   

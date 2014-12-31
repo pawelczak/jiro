@@ -14,35 +14,43 @@
 
     <!-- ************* General  -->
     <definition name="adminHome" extends="admin">
-		<put-attribute name="content" value="/WEB-INF/view/admin/action/home.jsp" />  
+		<put-attribute name="content" value="/WEB-INF/view/admin/content/home.jsp" />  
     </definition>
 
 	<definition name="adminShow" extends="admin">
-		<put-attribute name="content" value="/WEB-INF/view/admin/action/show.jsp" />  
+		<put-attribute name="content" value="/WEB-INF/view/admin/content/show.jsp" />  
     </definition>
     
     <definition name="adminAdd" extends="admin">
-		<put-attribute name="content" value="/WEB-INF/view/admin/action/add.jsp" />  
+		<put-attribute name="content" value="/WEB-INF/view/admin/content/add.jsp" />  
     </definition>
     
     <definition name="articleView" extends="admin">
-		<put-attribute name="content" value="/WEB-INF/view/admin/action/view.jsp" />  
+		<put-attribute name="content" value="/WEB-INF/view/admin/content/view.jsp" />  
     </definition>
     
     <definition name="categoryList" extends="admin">
-		<put-attribute name="content" value="/WEB-INF/view/admin/action/categoryList.jsp" />  
+		<put-attribute name="content" value="/WEB-INF/view/admin/content/category/categoryList.jsp" />  
     </definition>
     
     <definition name="categoryAdd" extends="admin">
-		<put-attribute name="content" value="/WEB-INF/view/admin/action/categoryAdd.jsp" />  
+		<put-attribute name="content" value="/WEB-INF/view/admin/content/category/categoryAdd.jsp" />  
     </definition>
     
     <definition name="photoList" extends="admin">
-		<put-attribute name="content" value="/WEB-INF/view/admin/action/photoList.jsp" />  
+		<put-attribute name="content" value="/WEB-INF/view/admin/content/photo/photoList.jsp" />  
     </definition>
     
     <definition name="photoAdd" extends="admin">
-		<put-attribute name="content" value="/WEB-INF/view/admin/action/photoAdd.jsp" />  
+		<put-attribute name="content" value="/WEB-INF/view/admin/content/photo/photoAdd.jsp" />  
+    </definition>
+    
+    <definition name="previewPhotoList" extends="admin">
+		<put-attribute name="content" value="/WEB-INF/view/admin/content/previewPhoto/previewPhotoList.jsp" />  
+    </definition>
+    
+    <definition name="previewPhotoAdd" extends="admin">
+		<put-attribute name="content" value="/WEB-INF/view/admin/content/previewPhoto/previewPhotoAdd.jsp" />  
     </definition>
     
     <definition name="login" template="/WEB-INF/view/admin/login.jsp">

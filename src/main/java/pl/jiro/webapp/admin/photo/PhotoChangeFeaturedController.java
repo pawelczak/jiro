@@ -29,7 +29,7 @@ public class PhotoChangeFeaturedController {
 	
 	@RequestMapping("/admin/featurePhoto")
 	public String featurePhoto(@RequestParam long id, @RequestParam boolean status, Model model) {
-		Photo photo = photoRepository.getPhotoById(id);
+		Photo photo = photoRepository.findPhotoById(id);
 		
 		photoService.setFeaturedStatus(photo, status);
 		

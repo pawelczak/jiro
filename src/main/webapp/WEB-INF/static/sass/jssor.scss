@@ -1,0 +1,222 @@
+$jssor_w: 940px;
+$jssor_h: 450px;
+$blue: #238ed2;
+
+#slider1_container {
+    position: relative; top: 0px; left: 0px; width: $jssor_w; height: $jssor_h;
+
+
+    .slider1-slides {
+        cursor: move; position: absolute; overflow: hidden; left: 0px; top: 0px; width: $jssor_w; height: $jssor_h;
+
+    }
+
+
+    .jssorb21 {
+        position: absolute; top: 420px; left: 460.5px; width: 73px; height: 19px;
+
+        > div {
+            position: absolute; width: 19px; height: 19px; text-align: center; line-height: 19px; color: White; font-size: 12px; left: 0px; top: 0px;
+        }
+    }
+}
+
+
+#slider2_container {
+    position: relative; top: 0px; left: 0px; width: $jssor_w;
+    height: $jssor_h; background: #191919;
+
+
+
+    .jssort01 {
+
+        position: absolute; width: $jssor_w; height: 100px; left:0px; bottom: -662px;
+
+    }
+}
+
+
+.slider-slides {
+    cursor: move; position: absolute; left: 0px; top: 0px; width: $jssor_w; height: $jssor_h; overflow: hidden;
+
+    > div {
+        &:before {
+            background: none repeat scroll 0 0 rgba(100, 100, 100, 0);
+            border: 1px solid rgba(255, 255, 255, 0.9);
+            content: "";
+            display: block;
+            height: 518px;
+            left: 15px;
+            position: absolute;
+            top: 15px;
+            width: 1140px;
+            z-index: 11;
+        }
+
+    }
+
+}
+
+
+/* jssor slider arrow navigator skin 05 css */
+/*
+.jssora05l              (normal)
+.jssora05r              (normal)
+.jssora05l:hover        (normal mouseover)
+.jssora05r:hover        (normal mouseover)
+.jssora05ldn            (mousedown)
+.jssora05rdn            (mousedown)
+*/
+.jssora05l, .jssora05r, .jssora05ldn, .jssora05rdn
+{
+    position: absolute;
+    cursor: pointer;
+    display: block;
+    background: url(../img/a17.png) no-repeat;
+    overflow:hidden;
+}
+.jssora05l { background-position: -10px -40px; }
+.jssora05r { background-position: -70px -40px; }
+.jssora05l:hover { background-position: -130px -40px; }
+.jssora05r:hover { background-position: -190px -40px; }
+.jssora05ldn { background-position: -250px -40px; }
+.jssora05rdn { background-position: -310px -40px; }
+
+/* jssor slider thumbnail navigator skin 01 css */
+
+/*
+.jssort01 .p           (normal)
+.jssort01 .p:hover     (normal mouseover)
+.jssort01 .pav           (active)
+.jssort01 .pav:hover     (active mouseover)
+.jssort01 .pdn           (mousedown)
+*/
+.jssort01 .w {
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    width: 100%;
+    height: 100%;
+    background: rgba(255, 255, 255, 0.6);
+}
+
+.jssort01 .w img {
+    border: 1px solid #fff !important;
+    opacity: 1;
+
+    &:hover {
+        opacity: 0.5;
+    }
+}
+
+.jssort01 .pav .w img {
+    opacity: 0.5;
+}
+
+.jssort01 .c {
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    width: 68px;
+    height: 68px;
+    /*border: #000 2px solid;*/
+}
+
+.jssort01 .p:hover .c, .jssort01 .pav:hover .c, .jssort01 .pav .c {
+    background: url(../img/t01.png) center center;
+    border-width: 0px;
+    top: 2px;
+    left: 2px;
+    width: 68px;
+    height: 68px;
+}
+
+
+.jssort01 .p:hover .c, .jssort01 .pav:hover .c {
+    top: 0px;
+    left: 0px;
+    width: 70px;
+    height: 70px;
+   /* border: #fff 1px solid;*/
+}
+
+.jssorb21 {
+    margin-left: -50px;
+
+
+    div {
+        background: rgba(0, 0, 0, 0);
+        border: 2px solid #fff;
+        border-radius: 10px;
+        cursor: pointer;
+        display: block;
+        height: 24x;
+        width: 24px;
+        
+        &:hover {
+            background: lighten(#fff, 30%);
+        }
+    }
+
+    .av {
+        background: #fff;
+        
+        &:hover {
+            background: #fff;
+        }
+    }
+}
+
+.jssora21ldn, .jssora21rdn {
+    opacity: 0.4;
+}
+
+.jssora21l, .jssora21ldn {
+    background-image: url("../img/apartment/triangle_left.png");
+    cursor: pointer;
+    height: 105px;
+    left: 0px;
+    position: absolute;
+    top: 221px;
+    width: 52px;
+    z-index: 10;
+}
+
+.jssora21r, .jssora21rdn {
+    background-image: url("../img/apartment/triangle_right.png");
+    cursor: pointer;
+    height: 105px;
+    position: absolute;
+    right: 0px;
+    top: 221px;
+    width: 52px;
+    z-index: 10;
+}
+
+.jssora21l, .jssora21r {
+    &:hover {
+        opacity: 0.7;
+    }
+}
+
+.jssort01 {
+    bottom: -100px;
+    overflow: hidden;
+    width: 1170px;
+}
+
+.jssor-caption {
+	background: none repeat scroll 0 0 rgba(255, 255, 255, 0.95);
+    bottom: 60px;
+    color: #333;
+    display: inline-block;
+    font-size: 16px;
+    font-style: italic;
+    left: 50px;
+    padding: 4px 8px;
+    position: absolute;
+}
+
+
+
+

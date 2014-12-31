@@ -39,7 +39,10 @@
 
 
 <div class="form-group">
-	<a class="button" href="${contextPath}/admin/addPhoto/${categoryId}">Dodaj zdjęcie</a>
+	<a class="button" href="${contextPath}/admin/addPhoto/${categoryId}">
+		<img src="${contextPath}/static/image/icons/admin/add-image.png" />
+		Dodaj zdjęcie
+	</a>
 </div>
 
 <table class="table table-bordered table-hover">

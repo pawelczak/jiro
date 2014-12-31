@@ -23,6 +23,7 @@
           <ul role="menu" class="dropdown-menu">
             <li><a href="${contextPath}/admin/addPhoto">Dodaj</a></li>
             <li><a href="${contextPath}/admin/photoList">Lista</a></li>
+            <li><a href="${contextPath}/admin/previewPhoto/list">Frontowa galeria</a></li>
           </ul>
         </li>
         <li ><a href="${contextPath}/" target="_blank" >Przejdź do strony</a></li>

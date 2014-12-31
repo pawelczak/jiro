@@ -49,6 +49,12 @@ public class PhotoRepository {
 	}
 	
 	@Transactional
+	public Photo findPhotoById(long id) {
+		Session session = sessionFactory.getCurrentSession();
+		return (Photo) session.get(Photo.class, id);
+	}
+	
+	@Transactional
 	public List<Photo> findVisibleByCategoryId(Integer id) {
 		Session session = sessionFactory.getCurrentSession();
 		
@@ -64,8 +70,6 @@ public class PhotoRepository {
 		List photos = session.createQuery("from Photo where featured = 1").list();
 		return photos;
 	}
-	
-	
 
 	@Transactional
 	public void addPhoto(Photo photo) {
@@ -95,12 +99,5 @@ public class PhotoRepository {
 	public void editPhoto(Photo photo) {
 		Session session = sessionFactory.getCurrentSession();
 		session.update(photo);
-	}
-	
-	@Transactional
-	public Photo getPhotoById(long id) {
-		Session session = sessionFactory.getCurrentSession();
-		return (Photo) session.get(Photo.class, id);
-	}
-	
+	}	
 }
