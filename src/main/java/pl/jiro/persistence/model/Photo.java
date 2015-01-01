@@ -30,6 +30,8 @@ public class Photo extends BasicDataSource {
 	
 	private boolean visible = true;
 	
+	private int position;
+	
 	@Size(min=0, max=256, message="Opis fotografii mo�e sk�ada� si� maksymalnie z 256 znak�w.")
 	private String description;
 
@@ -64,17 +66,23 @@ public class Photo extends BasicDataSource {
 		return src;
 	}
 	
+	public boolean getVisible() {
+		return visible;
+	}
+	
 	public boolean getFeatured() {
 		return featured;
+	}
+	
+	public int getPosition() {
+		return position;
 	}
 	
 	public String getDescription() {
 		return description;
 	}
 	
-	public boolean getVisible() {
-		return visible;
-	}
+	
 	
 	
 	//------------------------ PRIVATE --------------------------
@@ -102,16 +110,22 @@ public class Photo extends BasicDataSource {
 		this.src = src;
 	}	
 	
+	public void setVisible(boolean vis) {
+		this.visible = vis;
+	}
+	
 	public void setFeatured(boolean feat) {
 		featured = feat;
+	}
+	
+	public void setPosition(int pos) {
+		position = pos;
 	}
 	
 	public void setDescription(String desc) {
 		this.description = desc;
 	}
 	
-	public void setVisible(boolean vis) {
-		this.visible = vis;
-	}
+	
 	
 }

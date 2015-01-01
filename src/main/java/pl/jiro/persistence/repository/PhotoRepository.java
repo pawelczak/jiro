@@ -42,7 +42,7 @@ public class PhotoRepository {
 	@Transactional
 	public List<Photo> findByCategoryId(int id) {
 		Session session = sessionFactory.getCurrentSession();
-		Query query = session.createQuery("from Photo where cid = :categoryId");
+		Query query = session.createQuery("from Photo where cid = :categoryId order by position ");
 		query.setParameter("categoryId", (long)id);
 		List photos = query.list();
 		return photos;
@@ -58,7 +58,7 @@ public class PhotoRepository {
 	public List<Photo> findVisibleByCategoryId(Integer id) {
 		Session session = sessionFactory.getCurrentSession();
 		
-		Query query = session.createQuery("from Photo where cid = :categoryId and visible = 1");
+		Query query = session.createQuery("from Photo where cid = :categoryId and visible = 1 order by position");
 		query.setParameter("categoryId", (long)id);
 		
 		return query.list();

@@ -44,25 +44,21 @@ public class PhotoService {
 			return false;
 		}
 		
+		photo.setPosition((int)photo.getId());
 		photoRepository.editPhoto(photo);
 		
 		return true;
 	}
 	
+	public void edit(Photo photo, MultipartFile image) {
+		
+		editPhoto(photo, image);
+	}
+	
 	public void edit(Photo photo, MultipartFile image, String imageUploaded) {
 		photo.setSrc(imageUploaded);
 		
-		if (image != null) {
-			if (!image.isEmpty()) {
-				photoImageService.delete((int)photo.getId());
-				
-				photoImageService.validateImage(image);
-				photoImageService.save(webContext + photo.getId() + ".jpg", image);
-				photo.setSrc(photo.getId() + ".jpg");
-			}
-		}
-		
-		photoRepository.editPhoto(photo);
+		editPhoto(photo, image);
 	}
 	
 	public void delete(Photo photo) {
@@ -95,5 +91,31 @@ public class PhotoService {
 		photoRepository.editPhoto(photo);
 	}
 	
+	public void switchPosition(Photo firstPhoto, Photo secondPhoto) {
+		int frstPhotoPosition = firstPhoto.getPosition();
+		
+		firstPhoto.setPosition(secondPhoto.getPosition());
+		secondPhoto.setPosition(frstPhotoPosition);
+		
+		photoRepository.editPhoto(firstPhoto);
+		photoRepository.editPhoto(secondPhoto);
+	}
 	
+	
+	//------------------------ PRIVATE --------------------------
+	
+	private void editPhoto(Photo photo, MultipartFile image) {
+		
+		if (image != null) {
+			if (!image.isEmpty()) {
+				photoImageService.delete((int)photo.getId());
+				
+				photoImageService.validateImage(image);
+				photoImageService.save(webContext + photo.getId() + ".jpg", image);
+				photo.setSrc(photo.getId() + ".jpg");
+			}
+		}
+		
+		photoRepository.editPhoto(photo);
+	}
 }

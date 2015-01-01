@@ -51,6 +51,7 @@
 		<th>Nazwa</th>
 		<th width="24px"></th>
 		<th width="24px"><img src="${contextPath}/static/image/icons/visible.png" /></th>
+		<th width="24px"></th>
 		<th width="40" >Zdjęcie</th>
 		<th width="160">Opis</th>
 		<th width="150"></th>
@@ -98,6 +99,28 @@
 					</c:otherwise>
 				</c:choose>
 			</form>			
+		</td>
+		<td class="no-padding">
+			<c:if test="${!status.first}" >
+				<form method="POST" action="${contextPath}/admin/photo/changePosition" id="form-feature-${status.index + 1}" >
+					<input type="hidden" name="firstId" value="${photo.id}" />
+					<input type="hidden" name="secondId" value="${photos[status.index-1].id}" />
+
+					<button class="button-visible" >
+						<img src="${contextPath}/static/image/icons/admin/arrow-up.png" />
+					</button>
+				</form>
+			</c:if>
+			<c:if test="${!status.last}" >
+				<form method="POST" action="${contextPath}/admin/photo/changePosition" id="form-feature-${status.index + 1}" >
+					<input type="hidden" name="firstId" value="${photo.id}" />
+					<input type="hidden" name="secondId" value="${photos[status.index+1].id}" />
+					
+					<button class="button-visible" >
+						<img src="${contextPath}/static/image/icons/admin/arrow-down.png" />
+					</button>
+				</form>
+			</c:if>
 		</td>
 		<td><img src="${contextPath}/photos/${photo.src}" height="40" /></td>
 		<td>${photo.description}</td>

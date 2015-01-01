@@ -5,7 +5,6 @@ import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Service;
 import org.springframework.web.multipart.MultipartFile;
 
-import pl.jiro.persistence.model.Photo;
 import pl.jiro.persistence.model.PreviewPhoto;
 import pl.jiro.persistence.repository.PreviewPhotoRepository;
 import pl.jiro.photo.ImageUploadException;
@@ -75,5 +74,15 @@ public class PreviewPhotoService {
 	public void setVisibility(PreviewPhoto previewPhoto, boolean visibility) {
 		previewPhoto.setVisible(visibility);
 		previewPhotoRepository.edit(previewPhoto);
+	}
+	
+	public void switchPosition(PreviewPhoto firstPhoto, PreviewPhoto secondPhoto) {
+		int frstPhotoPosition = firstPhoto.getPosition();
+		
+		firstPhoto.setPosition(secondPhoto.getPosition());
+		secondPhoto.setPosition(frstPhotoPosition);
+		
+		previewPhotoRepository.edit(firstPhoto);
+		previewPhotoRepository.edit(secondPhoto);
 	}
 }

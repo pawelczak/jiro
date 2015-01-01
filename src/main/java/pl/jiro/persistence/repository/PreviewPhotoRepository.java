@@ -26,14 +26,14 @@ public class PreviewPhotoRepository {
 	@Transactional
 	public List<PreviewPhoto> findAll() {
 		Session session = sessionFactory.getCurrentSession();
-		List photos = session.createQuery("from PreviewPhoto").list();
+		List photos = session.createQuery("from PreviewPhoto order by position").list();
 		return photos;
 	}
 	
 	@Transactional
 	public List<PreviewPhoto> findAllVisible() {
 		Session session = sessionFactory.getCurrentSession();
-		List photos = session.createQuery("from PreviewPhoto where visible = 1 ").list();
+		List photos = session.createQuery("from PreviewPhoto where visible = 1 order by position").list();
 		return photos;
 	}
 	

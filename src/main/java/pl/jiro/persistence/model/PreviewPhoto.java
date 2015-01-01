@@ -27,6 +27,8 @@ public class PreviewPhoto extends BasicDataSource {
 	
 	private boolean visible = true;
 	
+	private int position;
+	
 	@Size(min=0, max=256, message="Opis fotografii mo�e sk�ada� si� maksymalnie z 256 znak�w.")
 	private String description;
 
@@ -62,6 +64,10 @@ public class PreviewPhoto extends BasicDataSource {
 		return visible;
 	}
 	
+	public int getPosition() {
+		return position;
+	}
+	
 	
 	//------------------------ PRIVATE --------------------------
 	
@@ -90,6 +96,10 @@ public class PreviewPhoto extends BasicDataSource {
 	
 	public void setVisible(boolean vis) {
 		this.visible = vis;
+	}
+	
+	public void setPosition(int pos) {
+		this.position = pos;
 	}
 	
 }
