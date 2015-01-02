@@ -6,20 +6,29 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 import pl.jiro.persistence.repository.PhotoRepository;
+import pl.jiro.webapp.site.photo.PhotoFeaturedService;
 
 /*
- * @author £ukasz Pawe³czak
+ * @author ï¿½ukasz Paweï¿½czak
  */
 @Controller
 public class GalleryFeaturedController {
 
+	
+	
 	@Autowired
 	private PhotoRepository photoRepository;
+	
+	@Autowired
+	private PhotoFeaturedService photoFeaturedService;
+	
+	
+	//------------------------ LOGIC --------------------------	
 	
 	@RequestMapping("/featured")
 	public String featured(Model model) {
 		
-		model.addAttribute("photos", photoRepository.findAllFeatured());
+		model.addAttribute("photos", photoFeaturedService.findAll());
 		
 		return "featured";
 	}

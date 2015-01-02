@@ -31,16 +31,23 @@ public class CategoryRepository {
 	}
 	
 	@Transactional
+	public List<Category> findAllVisible() {
+		Session session = sessionFactory.getCurrentSession();
+		List categories = session.createQuery("from Category where visible = 1 order by name ASC").list();
+		return categories;
+	}
+	
+	@Transactional
 	public List<Category> findAllOrderId() {
 		Session session = sessionFactory.getCurrentSession();
-		List categories = session.createQuery("from Category order by id DESC").list();
+		List categories = session.createQuery("from Category where visible = 1 order by id DESC").list();
 		return categories;
 	}
 	
 	@Transactional
 	public List<Category> findAllOrderPopular() {
 		Session session = sessionFactory.getCurrentSession();
-		List categories = session.createQuery("from Category order by views DESC, id DESC").list();
+		List categories = session.createQuery("from Category where visible = 1 order by views DESC, id DESC").list();
 		return categories;
 	}
 	

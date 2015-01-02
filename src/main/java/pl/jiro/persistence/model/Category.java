@@ -24,6 +24,8 @@ public class Category {
 	@Size(min=0, max=256, message="Opis kategorii mo�e sk�ada� si� maksymalnie z 256 znak�w.")
 	private String description;
 	
+	private boolean visible = false;
+	
 	/*
 	@DateTimeFormat(pattern=FormatConst.DATE_FORMAT_PATTERN)
 	private Date addDate;
@@ -54,6 +56,10 @@ public class Category {
 	public String getDescription() {
 		return description;
 	}
+	
+	public boolean getVisible() {
+		return visible;
+	}
 	/*
 	public Date getAddDate() {
 		return addDate;
@@ -77,6 +83,11 @@ public class Category {
 	public void setDescription(String desc) {
 		this.description = desc;
 	}
+	
+	public void setVisible(boolean visible) {
+		this.visible = visible;
+	}
+	
 	/*
 	public void setAddDate(Date addDate) {
 		this.addDate = addDate;

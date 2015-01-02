@@ -30,9 +30,11 @@
 	<tr>
 		<th width="20px">#</th>
 		<th><spring:message code='name' /></th>
-		<th width="24px" ></th>
+		<th width="24px"><img src="${contextPath}/static/image/icons/visible.png" /></th>
+		<%--
 		<th><spring:message code='dateAdd' /></th>
 		<th><spring:message code='dateModification' /></th>
+		 --%>
 		<th><spring:message code='desc' /></th>
 		<th width="140"></th>
 	</tr>
@@ -41,9 +43,27 @@
 	<tr>
 		<td>${status.index + 1}</td>
 		<td>${category.name}</td>
-		<td></td>
-		<td></td>
-		<td></td>
+		<td class="no-padding">
+			<form method="POST" action="${contextPath}/admin/category/visibleChange" id="form-visible-${status.index + 1}" >
+				<input type="hidden" name="id" value="${category.id}" />
+				<input type="hidden" name="visibility" value="${!category.visible}" />
+
+				<c:choose>
+					<c:when test="${category.visible=='true'}" >
+						<button class="button-visible" >
+							<img src="${contextPath}/static/image/icons/ok-24.png" />
+						</button>
+					</c:when>
+					<c:otherwise>
+						<button class="button-visible" >
+							<img src="${contextPath}/static/image/icons/admin/close.png" />
+						</button>
+					</c:otherwise>
+				</c:choose>
+			</form>			
+		</td>
+		<%--<td></td>
+		<td></td>  --%>
 		<td>${category.description}</td>
 		<!--  <td></td> -->
 		<td class="table-form" >

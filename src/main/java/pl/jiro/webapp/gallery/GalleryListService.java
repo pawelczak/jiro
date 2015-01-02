@@ -28,7 +28,7 @@ public class GalleryListService {
 	//------------------------ LOGIC --------------------------
 	
 	public List<Gallery> listAllGalleries() {
-		return convertCategoriesToGalleries(categoryRepository.findAll());
+		return convertCategoriesToGalleries(categoryRepository.findAllVisible());
 	}
 	
 	public List<Gallery> findThreeLastAdded() {
