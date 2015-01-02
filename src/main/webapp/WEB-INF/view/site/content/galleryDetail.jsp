@@ -9,7 +9,7 @@
 	<div class="page-header" >
 		<div class="link-back"><a href="${contextPath}/gallery" >Powrót</a></div>
 	
-		<div class="header-title">Galeria "${category.name}"</div>
+		<div class="header-title"><spring:message code="gallery.header" /> "${category.name}"</div>
 	</div>
 
 	<c:forEach items="${photos}" var="photo" varStatus="status">

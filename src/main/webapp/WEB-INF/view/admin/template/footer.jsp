@@ -2,5 +2,5 @@
 <%@ include file="/WEB-INF/view/common/taglibs.jsp" %>
 
 <div class="container">
-	<p>Panel administracyjny 2014</p>
+	<p><spring:message code='admin.panel.footer' /></p>
 </div>

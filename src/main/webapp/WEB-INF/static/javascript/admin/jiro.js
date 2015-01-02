@@ -27,5 +27,19 @@ $(document).ready(function() {
 	});
 	
 	
+	
+	$("[data-toggle='confirmation-popup']").each(function() {
+		var $this = $(this);
+		
+		$(this).popConfirm({
+			title: $this.attr("data-title"),
+			placement: $this.attr("data-placement"),
+	        container: "body", // The html container
+	        yesBtn: $this.attr("data-btn-yes"),
+	        noBtn: $this.attr("data-btn-no")
+		});
+		
+	});
+	
 });
 

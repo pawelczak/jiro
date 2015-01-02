@@ -45,6 +45,7 @@ public class PreviewPhotoService {
 			return false;
 		}
 		
+		previewPhoto.setPosition((int)previewPhoto.getId());
 		previewPhotoRepository.edit(previewPhoto);
 		
 		return true;

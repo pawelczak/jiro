@@ -9,7 +9,7 @@
     
 	
     <%@ include file="/WEB-INF/view/admin/static/css.jsp"%>
-    <%@ include file="/WEB-INF/view/common/javascript.jsp"%>
+    <%@ include file="/WEB-INF/view/admin/static/javascript.jsp"%>
     <%@ include file="/WEB-INF/view/common/meta.jsp"%>
     
     

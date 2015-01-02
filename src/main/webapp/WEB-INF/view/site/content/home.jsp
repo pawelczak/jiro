@@ -3,21 +3,15 @@
 
 
 <div class="showcase" >
-
-
 	 
 	 <gallery:jssorCarousel photos="${carouselPhotos}"></gallery:jssorCarousel>
-	 
-<%--	 
-	 <gallery:bootsCarousel></gallery:bootsCarousel>
-	--%>
-		
+
 </div>
 
 
 <div class="container" >
 	<div class="sh-header">
-		<div>O mnie</div>
+		<div><spring:message code="home.aboutMe" /></div>
 	</div>	
 	<div class="sh-desc">
 	
@@ -59,7 +53,7 @@
 				
 					<div class="block featured"></div>
 				
-					<p>Polecane zdjęcia</p>
+					<p><spring:message code="home.featured" /></p>
 					<p>Lorem ipsum dolor sit amet, conse ctetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis </p>
 				</div>
 			</div>
@@ -67,14 +61,14 @@
 				<div class="teaser" >
 					<div class="block gallery"></div>
 				
-					<p>Galeria</p>
+					<p><spring:message code="home.gallery" /></p>
 					<p>Lorem ipsum dolor sit amet, conse ctetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis </p>
 				</div>
 			</div>
 			<div class="col-md-4" >
 				<div class="teaser" >
 					<div class="block contact"></div>
-					<p>Kontakt</p>
+					<p><spring:message code="home.contact" /></p>
 					<p>Lorem ipsum dolor sit amet, cons ectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis </p>
 				</div>
 			</div>

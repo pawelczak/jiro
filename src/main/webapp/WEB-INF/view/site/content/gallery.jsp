@@ -4,11 +4,9 @@
 
 <div class="container gallery" >
 	<div class="page-header" >
-		<!--  <div class="header-icon header-contact" ></div> -->
-		<div class="header-title">Galeria</div>
+		<div class="header-title"><spring:message code="gallery.header" /></div>
 	</div>
 	<p></p>
-
 
 	<c:forEach items="${galleries}" var="gallery" varStatus="status" >
 	
@@ -21,15 +19,15 @@
 				
 				<img src="${contextPath}/photos/${gallery.photo.src}" />
 				
-				<div class="gallery-desc">
+				<div class="gallery-desc" >
 					<span>${gallery.category.name}</span>
 					<p>${gallery.category.description}</p>	
-					<div>Wszystkie fotografie</div>
+					<div><spring:message code="gallery.allPhoto" /></div>
 				</div>
 			</a>
 		</div>
 	
-		<c:if test="${status.index % 3 == 2}">
+		<c:if test="${status.index % 3 == 2}" >
 			</div>
 		</c:if>
 	

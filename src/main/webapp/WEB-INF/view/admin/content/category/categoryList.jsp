@@ -1,7 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <%@ include file="/WEB-INF/view/common/taglibs.jsp" %>
 
-<h1>Lista kategorii:</h1>
+<h1><spring:message code='category.list' />:</h1>
 
 <c:if test="${!empty message}" >
 	<c:choose >
@@ -29,12 +29,11 @@
 <table class="table table-bordered table-hover">
 	<tr>
 		<th width="20px">#</th>
-		<th>Nazwa</th>
+		<th><spring:message code='name' /></th>
 		<th width="24px" ></th>
-		<th>Data dodania</th>
-		<th>Data modyfikacji</th>
-		<th>Opis</th>
-		<!--  <th>Liczba zdjęć</th>  -->
+		<th><spring:message code='dateAdd' /></th>
+		<th><spring:message code='dateModification' /></th>
+		<th><spring:message code='desc' /></th>
 		<th width="140"></th>
 	</tr>
 
@@ -55,39 +54,14 @@
 		
 			<form method="POST" action="${contextPath}/admin/deleteCategory" id="form-delete-${status.index + 1}" >
 				<input type="hidden" name="id" value="${category.id}" />
-				<input type="submit" class="btn btn-primary btn-sm deleteModal" value="Usuń" data-toggle="modal" data-target="deleteModal"  />
-				<!--
-				<button class="btn btn-primary btn-sm deleteModal" data-toggle="modal" data-target="deleteModal" >Usun</button>
-				 
-				<a href="#" class="btn btn-primary btn-sm deleteModal" data-toggle="modal" data-target="deleteModal" onclick="$('#delete-form').on('click', function() {$('#form-delete-${status.index + 1}').submit();});" >Usuń</a>
-				 -->
+				<input type="submit" class="btn btn-primary btn-sm deleteModal" value="<spring:message code='delete' />" data-toggle="confirmation-popup" data-title="<spring:message code='confirm.title' />"
+					data-placement="top" data-confirm-content="<spring:message code='confirm.deleteCategory.content' />" data-btn-yes="<spring:message code='yes' />" data-btn-no="<spring:message code='no' />" />
 			</form>
 		</td>
 	</tr>
 	</c:forEach>
 
 </table>
-
-
-<!-- Modal -->
-
-<div class="modal fade" id="deleteModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
-  <div class="modal-dialog">
-    <div class="modal-content">
-      <div class="modal-header">
-        <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
-        <h4 class="modal-title" id="myModalLabel">Potwierdzenie Usuwania</h4>
-      </div>
-      <div class="modal-body">
-        Czy napewno chcesz usunąć wybraną kategorię ?
-      </div>
-      <div class="modal-footer">
-        <button type="button" class="btn btn-default" data-dismiss="modal">Anuluj</button>
-        <button type="button" id="delete-form" class="btn btn-primary">Ok</button>
-      </div>
-    </div>
-  </div>
-</div>
 
 
 

@@ -6,11 +6,10 @@
 		<div class="logo navbar-header" ><a class="navbar-brand" href="${contextPath}/" >Waldemar Pawełczak</a></div>
 	
 		<ul class="nav navbar-nav navbar-right" >
-			<li ><a href="${contextPath}/" >Główna</a></li>
-			<li ><a href="${contextPath}/featured" >Polecane zdjęcia</a></li>
-			<li><a href="${contextPath}/gallery" >Galeria</a></li>
-			<!-- <li><a href="${contextPath}/links" >Linki</a></li> -->
-			<li><a href="${contextPath}/contact" >Kontakt</a></li>
+			<li ><a href="${contextPath}/" ><spring:message code="navigation.main" /></a></li>
+			<li ><a href="${contextPath}/featured" ><spring:message code="navigation.featured" /></a></li>
+			<li><a href="${contextPath}/gallery" ><spring:message code="navigation.gallery" /></a></li>
+			<li><a href="${contextPath}/contact" ><spring:message code="navigation.contact" /></a></li>
 		</ul>
 	
 	</nav>

@@ -3,66 +3,59 @@
 
 <div class="container" >
 	<div class="page-header" >
-		<!--  <div class="header-icon header-contact" ></div> -->
-		<div class="header-title">Kontakt</div>
+		<div class="header-title"><spring:message code="contact.header" /></div>
 	</div>
 	<p></p>
-
 
 	<div class="row panel-contact">
 	
 		<div>
-			<div class="info-name c-label" >Waldemar Pawełczak</div>
+			<div class="info-name c-label" ><spring:message code="contact.info.name" /></div>
 		</div>
 		
 		<div>
-			<div class="info-email c-label" >w.paw@wp.pl</div>
+			<div class="info-email c-label" ><spring:message code="contact.info.email" /></div>
 		</div>
 	
-		<form>
+		<%-- <form> --%>
 			<div class="form-field c-label" >
 			
-				<p>Napisz do mnie wiadomość</p>
+				<p><spring:message code="contact.sendMessage" /></p>
 			
 			<div class="row" >
-				<label class="col-sm-4" for="inputName">Nick:</label>
+				<label class="col-sm-4" for="inputName"><spring:message code="contact.form.nick" />:</label>
 				<div class="col-sm-6" >				
 					<input type="text" id="inputName" placeholder="Jan Kowalski" />
 				</div>
 			</div>
 			
 			<div class="row" >	
-				<label class="col-sm-4" for="inputEmail">E-mail:</label>	
+				<label class="col-sm-4" for="inputEmail"><spring:message code="contact.form.email" />:</label>	
 				<div class="col-sm-6" >			
 					<input type="email" id="inputEmail" placeholder="jan@kowalski.pl" />
 				</div>
 			</div>
 				
 			<div class="row" >
-				<label class="col-sm-4" for="inputContent">Wiadomość:</label>
+				<label class="col-sm-4" for="inputContent"><spring:message code="contact.form.message" />:</label>
 				<div class="col-sm-6" >
 				<%-- 
 					<input type="text" id="inputContent" placeholder="Treść wiadomości" />
 				 --%>
-				 
-				 <textarea id="inputContent" >Treść wiadomości</textarea>
+
+				 <textarea id="inputContent" placeholder="<spring:message code="contact.form.messageText" />" ></textarea>
 				 
 				</div>	
 			</div>			
 				
 			<div class="row" >
-				<input type="submit" class="button" value="Wyślij" />
+				<input type="submit" class="button" value="<spring:message code='button.send' />" />
 			</div>
 			
 			</div>
 
-		</form>
-	
-	
-	
-	
+		<%-- </form> --%>
 	
 	</div>
-
 
 </div>

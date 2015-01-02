@@ -4,10 +4,9 @@
 
 <div class="container" >
 	<div class="page-header" >
-		<!--  <div class="header-icon header-contact" ></div> -->
-		<div class="header-title">Polecane zdjęcia</div>
+		<div class="header-title"><spring:message code="featured.title" /></div>
 	</div>
-	<div class="block-text" >Poniżej przedstawione są wybrane zdjęcia ze wszystkich galerii tematycznych</div>
+	<div class="block-text" ><spring:message code="featured.introText" /></div>
 
 	<c:forEach items="${photos}" var="photo" >
 	
@@ -18,9 +17,7 @@
 			<img src="${contextPath}/photos/${photo.src}" width="100%" />
 		</div>
 		
-	
 	</c:forEach>
 
 </div>
-
 

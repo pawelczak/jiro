@@ -2,7 +2,8 @@
 <%@ include file="/WEB-INF/view/common/taglibs.jsp" %>
 
 <div class="container" >
-	<h1>Ciekawe Linki</h1>
-	<p></p>
+	<div class="page-header" >
+		<div class="header-title"><spring:message code="links.header" /></div>
+	</div>
 
 </div>

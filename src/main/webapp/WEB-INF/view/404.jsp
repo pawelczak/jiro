@@ -9,7 +9,7 @@
 <body>
 
 	<div class="no-page-error">
-		404 - Błąd brak wybranej strony
+		<spring:message code='error.noPage' />
 	</div>
 
 </body>

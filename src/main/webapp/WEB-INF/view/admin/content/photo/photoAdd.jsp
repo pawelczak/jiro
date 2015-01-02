@@ -15,9 +15,9 @@
 </c:if>
 
 <div class="form-group">
-	<a class="button" href="${contextPath}/admin/photoList">
+	<a class="button" href="${contextPath}/admin/photoList/${categoryId}">
 		<img src="${contextPath}/static/image/icons/admin/arrow-back.png" />
-		Powrót
+		<spring:message code='back' />
 	</a>
 </div>
 
@@ -30,7 +30,8 @@
 		<%-- <form:errors path="image" /> --%>  
 		
 		<div class="form-group">
-		    <label for="inputName" class="col-sm-2 control-label">Kategoria</label>
+			<spring:message code='category' var='springCat' />
+		    <label for="inputName" class="col-sm-2 control-label"><c:out value="${springCat}" /></label>
 		    <div class="col-sm-5">
 		    <form:select path="cid" class="form-control">
 		    	<c:forEach var="category" items="${categories}" >
@@ -40,13 +41,15 @@
 		    </div>
 	 	</div>
 		<div class="form-group">
-		    <label for="inputName" class="col-sm-2 control-label">Tytył</label>
+			<spring:message code='title' var='springTit' />
+		    <label for="inputName" class="col-sm-2 control-label"><spring:message code='title' /></label>
 		    <div class="col-sm-10">
-	    	  <form:input path="title" class="form-control" id="inputName" placeholder="Tytuł zdjęcia" ></form:input>
+	    	  <form:input path="title" class="form-control" id="inputName" placeholder="${springTit}" ></form:input>
 		    </div>
 	 	</div>
 	 	<div class="form-group">
-		    <label for="inputName" class="col-sm-2 control-label">Ścieżka</label>
+	 		<spring:message code='src' var='springSrc' />
+		    <label for="inputName" class="col-sm-2 control-label"><spring:message code='src' /></label>
 		    <div class="col-sm-10">
 		    
 		    	<c:if test="${!empty photoSrc && photoSrc != ''}">
@@ -54,25 +57,35 @@
 		    	</c:if>
 		    
 		    
-	    	  <input name="image" type="file" class="form-control" id="inputName" placeholder="Plik ze zdjęciem" />
+	    	  <input name="image" type="file" class="form-control" id="inputName" placeholder="${springSrc}" />
 		    </div>
 	 	</div>
 	 	<div class="form-group">
-		    <label for="inputName" class="col-sm-2 control-label">Widoczność</label>
+		    <label for="inputName" class="col-sm-2 control-label"><spring:message code='visibility' /></label>
 		    <div class="col-sm-10">
 	    	  <form:checkbox path="visible" class="" value="1" ></form:checkbox>
 		    </div>
 	 	</div>
 	 	<div class="form-group">
-		    <label for="inputDesc" class="col-sm-2 control-label">Opis:</label>
+	 		<spring:message code='desc' var='springDesc' />
+		    <label for="inputDesc" class="col-sm-2 control-label"><spring:message code='desc' />:</label>
 		    <div class="col-sm-6">
-	    	  <form:textarea path="description" class="form-control" id="inputDesc" placeholder="Opis" ></form:textarea>
+	    	  <form:textarea path="description" class="form-control" id="inputDesc" placeholder="${springDesc}" ></form:textarea>
 		    </div>
 	 	</div>
 	    <div class="form-group">
 		    <div class="col-sm-offset-2 col-sm-10">
-		      <input type="submit" value="<spring:message code="photo.button.${formHeader}" />" class="btn btn-primary" />
-		      <a href="${contextPath}/admin/photoList/${categoryId}" class="btn btn-primary">Anuluj</a>
+		    
+		      <c:if test="${formHeader == 'add'}">
+		      	<input type="submit" value="<spring:message code="photo.button.${formHeader}" />" class="btn btn-primary"  />
+		      </c:if>
+		    
+		      <c:if test="${formHeader == 'edit'}" >
+			      <input type="submit" value="<spring:message code="photo.button.${formHeader}" />" class="btn btn-primary" data-toggle="confirmation-popup" data-title="<spring:message code='confirm.title' />"
+					data-placement="top" data-confirm-content="<spring:message code='confirm.edit.content' />" data-btn-yes="<spring:message code='yes' />" data-btn-no="<spring:message code='no' />"  />
+			  </c:if>
+			  
+		      <a href="${contextPath}/admin/photoList/${categoryId}" class="btn btn-primary"><spring:message code='cancel' /></a>
 		    </div>
 		</div>
 		

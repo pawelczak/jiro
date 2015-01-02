@@ -3,7 +3,7 @@
 
 
 
-<h1>Fotografie</h1>
+<h1><spring:message code='photos.title' /></h1>
 
 <c:if test="${!empty message}" >
 	<c:choose >
@@ -25,7 +25,7 @@
 
 
 <div class="form-group">
-	<div class="col-sm-3 control-label">Zdjęcia z kategorii:</div>
+	<div class="col-sm-3 control-label"><spring:message code='photos.fromCategory' />:</div>
 	<div class="col-sm-5">
 		<select class="form-control" >
 			<c:forEach var="category" items="${categories}" varStatus="status">
@@ -41,19 +41,19 @@
 <div class="form-group">
 	<a class="button" href="${contextPath}/admin/addPhoto/${categoryId}">
 		<img src="${contextPath}/static/image/icons/admin/add-image.png" />
-		Dodaj zdjęcie
+		<spring:message code='photo.add' />
 	</a>
 </div>
 
 <table class="table table-bordered table-hover">
 	<tr>
 		<th width="20px">#</th>
-		<th>Nazwa</th>
+		<th><spring:message code='name' /></th>
 		<th width="24px"></th>
 		<th width="24px"><img src="${contextPath}/static/image/icons/visible.png" /></th>
 		<th width="24px"></th>
-		<th width="40" >Zdjęcie</th>
-		<th width="160">Opis</th>
+		<th width="40" ><spring:message code='photo' /></th>
+		<th width="160"><spring:message code='desc' /></th>
 		<th width="150"></th>
 	</tr>
 
@@ -127,16 +127,16 @@
 		<td class="table-form" >
 			<form method="GET" action="${contextPath}/admin/editPhoto" >
 				<input type="hidden" name="id" value="${photo.id}" />
-				<input type="submit" class="btn btn-primary btn-sm" value="Edytuj" />
+				<input type="hidden" name="categoryId" value="${photo.cid}" />
+				<input type="submit" class="btn btn-primary btn-sm" value="<spring:message code='edit' />"/> 
 			</form>
 		
 			<form method="POST" action="${contextPath}/admin/deletePhoto" id="form-delete-${status.index + 1}" >
 				<input type="hidden" name="id" value="${photo.id}" />
-				<input type="submit" class="btn btn-primary btn-sm deleteModal" value="Usuń" data-toggle="modal" data-target="deleteModal"  />
-				<!--
-				<a href="#" class="btn btn-primary btn-sm deleteModal" data-toggle="modal" data-target="deleteModal" onclick="$('#delete-form').on('click', function() {$('#form-delete-${status.index + 1}').submit();});" >Usuń</a>
-				  -->
+				<input type="submit" class="btn btn-primary btn-sm deleteModal" value="<spring:message code='delete' />" data-toggle="confirmation-popup" data-title="<spring:message code='confirm.title' />"
+					data-placement="top" data-confirm-content="<spring:message code='confirm.delete.content' />" data-btn-yes="<spring:message code='yes' />" data-btn-no="<spring:message code='no' />" />
 			</form>
+			
 		</td>
 	</tr>
 	</c:forEach>

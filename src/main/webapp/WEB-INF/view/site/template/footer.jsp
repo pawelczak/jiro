@@ -5,16 +5,16 @@
 
 	<div class="sitemap">
 		<ul class="nav navbar-nav navbar-right">
-			<li ><a href="${contextPath}/" >Strona główna</a></li>
-			<li ><a href="${contextPath}/featured" >Polecane zdjęcia</a></li>
-			<li><a href="${contextPath}/gallery" >Galeria</a></li>
-			<li><a href="${contextPath}/links" >Linki</a></li>
-			<li><a href="${contextPath}/contact" >Kontakt</a></li>
+			<li ><a href="${contextPath}/" ><spring:message code="navigation.home" /></a></li>
+			<li ><a href="${contextPath}/featured" ><spring:message code="navigation.featured" /></a></li>
+			<li><a href="${contextPath}/gallery" ><spring:message code="navigation.gallery" /></a></li>
+			<li><a href="${contextPath}/links" ><spring:message code="navigation.links" /></a></li>
+			<li><a href="${contextPath}/contact" ><spring:message code="navigation.contact" /></a></li>
 		</ul>
 	
 	</div>
 	
-	<div class="info">© 2014 pawelczak.pl. </div>
+	<div class="info"><spring:message code="footer.copyrights" /></div>
 	
 
 </div>

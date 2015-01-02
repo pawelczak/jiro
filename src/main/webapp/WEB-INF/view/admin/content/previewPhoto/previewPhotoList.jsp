@@ -27,18 +27,18 @@
 <div class="form-group">
 	<a class="button" href="${contextPath}/admin/previewPhoto/add">
 		<img src="${contextPath}/static/image/icons/admin/add-image.png" />
-		Dodaj zdjęcie
+		<spring:message code='photo.add' />
 	</a>
 </div>
 
 <table class="table table-bordered table-hover">
 	<tr>
 		<th width="20px">#</th>
-		<th>Nazwa</th>
+		<th><spring:message code='name' /></th>
 		<th width="24px"><img src="${contextPath}/static/image/icons/visible.png" /></th>
 		<th width="24px"></th>
-		<th width="40" >Zdjęcie</th>
-		<th >Opis</th>
+		<th width="40" ><spring:message code='photo' /></th>
+		<th ><spring:message code='desc' /></th>
 		<th width="150"></th>
 	</tr>
 
@@ -92,15 +92,13 @@
 		<td class="table-form" >
 			<form method="GET" action="${contextPath}/admin/previewPhoto/edit" >
 				<input type="hidden" name="id" value="${photo.id}" />
-				<input type="submit" class="btn btn-primary btn-sm" value="Edytuj" />
+				<input type="submit" class="btn btn-primary btn-sm" value="<spring:message code='edit' />" />
 			</form>
 		
 			<form method="POST" action="${contextPath}/admin/previewPhoto/delete" id="form-delete-${status.index + 1}" >
 				<input type="hidden" name="id" value="${photo.id}" />
-				<input type="submit" class="btn btn-primary btn-sm deleteModal" value="Usuń" data-toggle="modal" data-target="deleteModal"  />
-				<!--
-				<a href="#" class="btn btn-primary btn-sm deleteModal" data-toggle="modal" data-target="deleteModal" onclick="$('#delete-form').on('click', function() {$('#form-delete-${status.index + 1}').submit();});" >Usuń</a>
-				  -->
+				<input type="submit" class="btn btn-primary btn-sm deleteModal" value="<spring:message code='delete' />" data-toggle="confirmation-popup" data-title="<spring:message code='confirm.title' />"
+					data-placement="top" data-confirm-content="<spring:message code='confirm.edit.content' />" data-btn-yes="<spring:message code='yes' />" data-btn-no="<spring:message code='no' />" />
 			</form>
 		</td>
 	</tr>
