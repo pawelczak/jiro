@@ -5,7 +5,6 @@
 <html class="no-js" >
   <head>
   
-  
     <c:set var="contextPath" value="${pageContext.request.contextPath}" scope="session"></c:set>  
     
   <%--  
@@ -19,25 +18,13 @@
     <title>Fotografia Waldemar Pawelczak</title>
 
   </head>
- 
   <body>
-  <%-- 
-       	<div class="wrapper" >
-       --%>	
-	        <header class="navbar navbar-fixed-top" >
-	            <tiles:insertAttribute name="header" />
-	        </header>
-	        
-            <tiles:insertAttribute name="content" flush="false" />
-	        
-	        <%--
-        </div>
+
+        <tiles:insertAttribute name="header" />
         
-        --%>
-        <div class="footer" >
-       		<tiles:insertAttribute name="footer" /> 
-        </div>
-     
+        <tiles:insertAttribute name="content" flush="false" />
+
+  		<tiles:insertAttribute name="footer" /> 
     
   </body>
 </html>
