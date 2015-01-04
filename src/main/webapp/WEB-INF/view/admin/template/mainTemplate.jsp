@@ -31,9 +31,9 @@
 	        
 	        <div class="push"></div>
         </div>
-        <footer>
+        <div class="footer" >
        		<tiles:insertAttribute name="footer" /> 
-        </footer>
+        </div>
     
     
   </body>

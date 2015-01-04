@@ -20,7 +20,7 @@ public class PreviewPhoto extends BasicDataSource {
 	@GeneratedValue
 	private long id;
 
-	@Size(min=0, max=128, message="Tytu� zdj�cia musi sk�ada� si� z maksymalnie 128 znak�w.")
+	@Size(min=0, max=128, message="Tytuł zdjęcia musi składać się z maksymalnie 128 znaków.")
 	private String title;
 	
 	private String src;
@@ -29,7 +29,7 @@ public class PreviewPhoto extends BasicDataSource {
 	
 	private int position;
 	
-	@Size(min=0, max=256, message="Opis fotografii mo�e sk�ada� si� maksymalnie z 256 znak�w.")
+	@Size(min=0, max=256, message="Opis fotografii może składać się maksymalnie z 256 znaków.")
 	private String description;
 
 	

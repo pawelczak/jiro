@@ -2,6 +2,15 @@
 
 @import "mixins.scss";
 
+html {
+	position: relative;
+	min-height: 100%;
+}
+body {
+	/* Margin bottom by footer height */
+	margin-bottom: 60px;
+} 
+
 html, body {
 	font-family: 'Noto Sans', sans-serif;
 	
@@ -9,6 +18,12 @@ html, body {
 
 body {
 	padding-top: 70px;
+}
+
+.footer {
+	position: absolute;
+	width: 100%;
+	bottom: 0;
 }
 
 h1 {

@@ -2,20 +2,29 @@
 * {
   margin: 0; }
 
-html, body {
-  height: 100%; }
+html {
+  position: relative;
+  min-height: 100%; }
+
+body {
+  /* Margin bottom by footer height */
+  margin-bottom: 100px; }
 
 .wrapper {
-  min-height: 100%;
-  height: auto !important;
-  height: 100%;
-  margin: 0 auto -70px; }
+  /*
+  	min-height: 100%;
+  	height: auto !important;
+  	height: 100%;
+  	margin: 0 auto $neg-footer-height;
+  	*/ }
   .wrapper > .container {
     margin-top: 100px; }
 
+/*
 .footer, .push {
-  height: 70px; }
-
+	height: $footer-height;
+}
+*/
 body {
   background: url("../image/noise.jpg") repeat scroll 0 0 transparent;
   font-family: "Noto Sans", sans-serif; }
@@ -48,12 +57,15 @@ header .nav > li > a:hover, header .nav > li > a:focus {
   color: #238ed2;
   text-decoration: none; }
 
-footer {
+.footer {
   background: #333333;
   color: white;
-  padding: 0px 0px 0px; }
+  padding: 0px 0px 0px;
+  position: absolute;
+  width: 100%;
+  bottom: 0; }
 
-footer .sitemap li a {
+.footer .sitemap li a {
   font-size: 12px; }
 
 .showcase {
@@ -276,6 +288,7 @@ footer .sitemap li a {
   	*/ }
 
 .page-header {
+  margin-top: 120px;
   position: relative; }
   .page-header .header-icon {
     background-repeat: no-repeat;
@@ -446,9 +459,9 @@ header {
       background: #fff;
       color: #333; }
 
-footer .info {
+.footer .info {
   padding-top: 0px; }
-footer .navbar-nav li a {
+.footer .navbar-nav li a {
   -webkit-transition: all 0.4s ease;
   -moz-transition: all 0.4s ease;
   -ms-transition: all 0.4s ease;
@@ -456,7 +469,7 @@ footer .navbar-nav li a {
   transition: all 0.4s ease;
   color: #fff;
   padding: 23px 10px; }
-  footer .navbar-nav li a:hover {
+  .footer .navbar-nav li a:hover {
     background: #fff;
     color: #333; }
 

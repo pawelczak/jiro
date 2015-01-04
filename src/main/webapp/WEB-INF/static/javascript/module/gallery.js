@@ -6,7 +6,7 @@ var Gallery = {
 		imgTitle: "image-title",
 		
 		init: function() {
-			if ($(".gallery-image"). length > 0) {
+			if ($(".gallery-image").length > 0) {
 				Gallery.assign();
 			}
 		},
@@ -19,7 +19,6 @@ var Gallery = {
 					var src = $this.attr("src");
 					
 					Gallery.create($this);
-					
 				});
 			});
 		},
@@ -41,7 +40,7 @@ var Gallery = {
 			
 			$window.prepend($content);
 			
-			$(".wrapper").prepend($window);
+			$("body").prepend($window);
 			
 			Gallery.createLib();
 		},

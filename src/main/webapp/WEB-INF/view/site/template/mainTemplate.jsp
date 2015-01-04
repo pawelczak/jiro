@@ -21,19 +21,22 @@
   </head>
  
   <body>
+  <%-- 
        	<div class="wrapper" >
-       	
+       --%>	
 	        <header class="navbar navbar-fixed-top" >
 	            <tiles:insertAttribute name="header" />
 	        </header>
 	        
             <tiles:insertAttribute name="content" flush="false" />
 	        
-	        <div class="push"></div>
+	        <%--
         </div>
-        <footer>
+        
+        --%>
+        <div class="footer" >
        		<tiles:insertAttribute name="footer" /> 
-        </footer>
+        </div>
      
     
   </body>
