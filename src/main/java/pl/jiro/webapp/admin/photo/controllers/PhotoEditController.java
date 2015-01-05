@@ -1,4 +1,4 @@
-package pl.jiro.webapp.admin.photo;
+package pl.jiro.webapp.admin.photo.controllers;
 
 import java.util.List;
 
@@ -19,6 +19,8 @@ import pl.jiro.persistence.model.Category;
 import pl.jiro.persistence.model.Photo;
 import pl.jiro.persistence.repository.CategoryRepository;
 import pl.jiro.persistence.repository.PhotoRepository;
+import pl.jiro.webapp.admin.photo.PhotoForm;
+import pl.jiro.webapp.admin.photo.PhotoFormConverter;
 import pl.jiro.webapp.admin.photo.services.PhotoService;
 
 
@@ -39,6 +41,9 @@ public class PhotoEditController {
 	@Autowired
 	private PhotoService photoService;
 	
+	@Autowired
+	private PhotoFormConverter photoFormConverter;
+	
 	
 	//------------------------ LOGIC --------------------------
 	
@@ -50,14 +55,14 @@ public class PhotoEditController {
 		model.addAttribute("categories", categories);
 		model.addAttribute("categoryId", categoryId);
 		model.addAttribute("formHeader", "edit");
-		model.addAttribute("photo", photo);
+		model.addAttribute("photoForm", photoFormConverter.convert(photo));
 		model.addAttribute("photoSrc", photo.getSrc());
 		
 		return "photoAdd";
 	}
 	
 	@RequestMapping(value="/admin/editPhoto", method=RequestMethod.POST)
-	public String editPhotoPost(@ModelAttribute @Valid Photo photo, 
+	public String editPhotoPost(@ModelAttribute @Valid PhotoForm photoForm, 
 			@RequestParam(value="image", required=false) MultipartFile image,
 			@RequestParam(value="image_uploaded", required=false) String imageUploaded,
 			BindingResult bindingResult, Model model) {
@@ -68,10 +73,10 @@ public class PhotoEditController {
             return "photoAdd";
         }		
 		
-		photoService.edit(photo, image, imageUploaded);
+		photoService.edit(photoFormConverter.convert(photoForm), image, imageUploaded);
 		
 		model.addAttribute("actionResponse", "editSuccess");
 		
-		return "redirect:/admin/photoList/" + photo.getCid();
+		return "redirect:/admin/photoList/" + photoForm.getCid();
 	}
 }

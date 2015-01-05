@@ -4,7 +4,6 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import javax.persistence.Table;
-import javax.validation.constraints.Size;
 
 /**
  * @author Łukasz Pawełczak
@@ -18,10 +17,8 @@ public class Category {
 	@GeneratedValue
 	private Integer id;	
 	
-	@Size(min=3, max=128, message="Nazwa kategorii musi sk�ada� si� z 3 do 128 znak�w.")
 	private String name;
 	
-	@Size(min=0, max=256, message="Opis kategorii mo�e sk�ada� si� maksymalnie z 256 znak�w.")
 	private String description;
 	
 	private boolean visible = false;

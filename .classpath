@@ -3,6 +3,7 @@
 	<classpathentry kind="output" path="bin"/>
 	<classpathentry kind="src" path="src/main/java"/>
 	<classpathentry kind="src" path="src/main/resources"/>
+	<classpathentry kind="src" path="src/test/java"/>
 	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER" exported="true"/>
 	<classpathentry kind="con" path="org.eclipse.jst.j2ee.internal.web.container" exported="true"/>
 	<classpathentry sourcepath="C:/Users/test/.gradle/caches/modules-2/files-2.1/org.apache.tiles/tiles-jsp/3.0.4/6888a53b2ac2be8b048ceb300fcc0eebad878a17/tiles-jsp-3.0.4-sources.jar" kind="lib" path="C:/Users/test/.gradle/caches/modules-2/files-2.1/org.apache.tiles/tiles-jsp/3.0.4/acd7b4744dfda5615c9b40ed6e6c1b110fe1d550/tiles-jsp-3.0.4.jar" exported="true">
@@ -96,6 +97,21 @@
 		</attributes>
 	</classpathentry>
 	<classpathentry sourcepath="C:/Users/test/.gradle/caches/modules-2/files-2.1/com.google.guava/guava/18.0/ad97fe8faaf01a3d3faacecd58e8fa6e78a973ca/guava-18.0-sources.jar" kind="lib" path="C:/Users/test/.gradle/caches/modules-2/files-2.1/com.google.guava/guava/18.0/cce0823396aa693798f8882e64213b1772032b09/guava-18.0.jar" exported="true">
+		<attributes>
+			<attribute name="org.eclipse.jst.component.nondependency" value=""/>
+		</attributes>
+	</classpathentry>
+	<classpathentry kind="lib" path="C:/Users/test/.m2/repository/junit/junit/4.11/junit-4.11.jar" exported="true">
+		<attributes>
+			<attribute name="org.eclipse.jst.component.nondependency" value=""/>
+		</attributes>
+	</classpathentry>
+	<classpathentry kind="lib" path="C:/Users/test/.m2/repository/org/mockito/mockito-core/1.9.5/mockito-core-1.9.5.jar" exported="true">
+		<attributes>
+			<attribute name="org.eclipse.jst.component.nondependency" value=""/>
+		</attributes>
+	</classpathentry>
+	<classpathentry sourcepath="C:/Users/test/.gradle/caches/modules-2/files-2.1/org.springframework/spring-test/3.2.3.RELEASE/2754a321d827c01045f29a8ca2c6f66122be393/spring-test-3.2.3.RELEASE-sources.jar" kind="lib" path="C:/Users/test/.gradle/caches/modules-2/files-2.1/org.springframework/spring-test/3.2.3.RELEASE/b431cc81467f229346d23ea6d3f7a17558b1e368/spring-test-3.2.3.RELEASE.jar" exported="true">
 		<attributes>
 			<attribute name="org.eclipse.jst.component.nondependency" value=""/>
 		</attributes>
@@ -215,6 +231,11 @@
 			<attribute name="org.eclipse.jst.component.nondependency" value=""/>
 		</attributes>
 	</classpathentry>
+	<classpathentry kind="lib" path="C:/Users/test/.m2/repository/org/hamcrest/hamcrest-core/1.3/hamcrest-core-1.3.jar" exported="true">
+		<attributes>
+			<attribute name="org.eclipse.jst.component.nondependency" value=""/>
+		</attributes>
+	</classpathentry>
 	<classpathentry kind="lib" path="C:/Users/test/.m2/repository/javax/servlet/servlet-api/2.4/servlet-api-2.4.jar" exported="true">
 		<attributes>
 			<attribute name="org.eclipse.jst.component.nondependency" value=""/>
@@ -226,11 +247,6 @@
 		</attributes>
 	</classpathentry>
 	<classpathentry kind="lib" path="C:/Users/test/.m2/repository/org/hamcrest/hamcrest-library/1.3/hamcrest-library-1.3.jar" exported="true">
-		<attributes>
-			<attribute name="org.eclipse.jst.component.nondependency" value=""/>
-		</attributes>
-	</classpathentry>
-	<classpathentry kind="lib" path="C:/Users/test/.m2/repository/org/hamcrest/hamcrest-core/1.3/hamcrest-core-1.3.jar" exported="true">
 		<attributes>
 			<attribute name="org.eclipse.jst.component.nondependency" value=""/>
 		</attributes>

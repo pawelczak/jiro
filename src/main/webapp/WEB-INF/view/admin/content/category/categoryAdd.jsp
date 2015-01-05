@@ -20,7 +20,7 @@
   <div class="panel-heading"><spring:message code="category.header.${formHeader}" /></div>
   <div class="panel-body">
 
-	<form:form modelAttribute="category" method="POST" class="form-horizontal" >
+	<form:form modelAttribute="categoryForm" method="POST" class="form-horizontal" >
 	
 		<form:errors path="name" />
 		<form:errors path="description" />

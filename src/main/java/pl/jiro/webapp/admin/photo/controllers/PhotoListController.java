@@ -1,4 +1,4 @@
-package pl.jiro.webapp.admin.photo;
+package pl.jiro.webapp.admin.photo.controllers;
 
 import java.util.Collections;
 import java.util.List;

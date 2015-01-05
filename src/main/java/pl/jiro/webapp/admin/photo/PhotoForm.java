@@ -1,25 +1,22 @@
-package pl.jiro.persistence.model;
+package pl.jiro.webapp.admin.photo;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.Id;
-import javax.persistence.Table;
-import org.apache.commons.dbcp.BasicDataSource;
+import javax.validation.constraints.NotNull;
+import javax.validation.constraints.Size;
 
 /**
+ * 
  * @author Łukasz Pawełczak
+ *
  */
-@Entity
-@Table(name = "photo")
-public class Photo extends BasicDataSource {
-	
-	
-	@Id
-	@GeneratedValue
+public class PhotoForm {
+
+		
 	private long id;
 	
+	@NotNull
 	private long cid;
 	
+	@Size(min=0, max=128, message="Tytuł zdjęcia musi składać się z maksymalnie 128 znaków.")
 	private String title;
 	
 	private String src;
@@ -28,18 +25,10 @@ public class Photo extends BasicDataSource {
 	
 	private boolean visible = true;
 	
-	private int position;
+	private int position = 0;
 	
+	@Size(min=0, max=256, message="Opis fotografii może składać się maksymalnie z 256 znaków.")
 	private String description;
-	
-	
-	//------------------------ CONSTRUCTORS --------------------------
-	
-	public Photo() {}
-	
-	public Photo(String title) {
-		this.title = title;
-	}
 	
 	
 	//------------------------ GETTERS --------------------------
@@ -77,15 +66,6 @@ public class Photo extends BasicDataSource {
 	}
 	
 	
-	
-	
-	//------------------------ PRIVATE --------------------------
-	
-	private void init() {
-	    addConnectionProperty("useUnicode", "true");
-	    addConnectionProperty("characterEncoding", "UTF-8");
-	}
-	
 	//------------------------ SETTERS --------------------------
 	
 	public void setId(long id) {
@@ -119,7 +99,4 @@ public class Photo extends BasicDataSource {
 	public void setDescription(String desc) {
 		this.description = desc;
 	}
-	
-	
-	
 }

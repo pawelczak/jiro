@@ -1,4 +1,4 @@
-package pl.jiro.webapp.admin.category;
+package pl.jiro.webapp.admin.category.controllers;
 
 import javax.validation.Valid;
 
@@ -11,8 +11,9 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 
-import pl.jiro.persistence.model.Category;
 import pl.jiro.persistence.repository.CategoryRepository;
+import pl.jiro.webapp.admin.category.CategoryForm;
+import pl.jiro.webapp.admin.category.CategoryFormConverter;
 
 /**
  * @author Łukasz Pawełczak
@@ -24,6 +25,9 @@ public class CategoryAddController {
 	@Autowired
 	private CategoryRepository categoryRepository;
 	
+	@Autowired
+	private CategoryFormConverter categoryFormConverter;
+	
 	//------------------------ LOGIC --------------------------
 	
 	@RequestMapping(value="/admin/addCategory", method=RequestMethod.GET)
@@ -31,20 +35,20 @@ public class CategoryAddController {
 		
 		model.addAttribute("message", res);
 		model.addAttribute("formHeader", "add");
-		model.addAttribute("category", new Category());
+		model.addAttribute("categoryForm", new CategoryForm());
 		
 		return "categoryAdd";
 	}
 	
 	@RequestMapping(value="/admin/addCategory", method=RequestMethod.POST)
-	public String categoryAddForm(@ModelAttribute @Valid Category category, BindingResult bindingResult, Model model) {
+	public String categoryAddForm(@ModelAttribute @Valid CategoryForm categoryForm, BindingResult bindingResult, Model model) {
 		
 		if (bindingResult.hasErrors()) {
 			model.addAttribute("formHeader", "add");
             return "categoryAdd";
         }
 		
-		categoryRepository.addCategory(category);
+		categoryRepository.addCategory(categoryFormConverter.convert(categoryForm));
 		model.addAttribute("actionResponse", "addSuccess");
 		
 		return "redirect:/admin/categoryList";

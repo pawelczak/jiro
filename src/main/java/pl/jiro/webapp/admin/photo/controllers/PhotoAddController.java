@@ -1,4 +1,4 @@
-package pl.jiro.webapp.admin.photo;
+package pl.jiro.webapp.admin.photo.controllers;
 
 import java.util.List;
 
@@ -17,10 +17,11 @@ import org.springframework.web.bind.annotation.SessionAttributes;
 import org.springframework.web.multipart.MultipartFile;
 
 import pl.jiro.persistence.model.Category;
-import pl.jiro.persistence.model.Photo;
 import pl.jiro.persistence.repository.CategoryRepository;
 import pl.jiro.persistence.repository.PhotoRepository;
 import pl.jiro.photo.ImageUploadException;
+import pl.jiro.webapp.admin.photo.PhotoForm;
+import pl.jiro.webapp.admin.photo.PhotoFormConverter;
 import pl.jiro.webapp.admin.photo.services.PhotoService;
 
 /**
@@ -40,6 +41,9 @@ public class PhotoAddController {
 	@Autowired
 	private PhotoService photoService;
 	
+	@Autowired
+	private PhotoFormConverter photoFormConverter;
+	
 	
 	//------------------------ LOGIC --------------------------
 	
@@ -51,7 +55,7 @@ public class PhotoAddController {
 		model.addAttribute("categories", categories);
 		
 		model.addAttribute("sessionCid", 0);
-		model.addAttribute("photo", new Photo());
+		model.addAttribute("photoForm", new PhotoForm());
 		model.addAttribute("formHeader", "add");
 		model.addAttribute("message", res);
 		
@@ -67,7 +71,7 @@ public class PhotoAddController {
 		model.addAttribute("categories", categories);
 		model.addAttribute("categoryId", categoryId);
 		model.addAttribute("sessionCid", 0);
-		model.addAttribute("photo", new Photo());
+		model.addAttribute("photoForm", new PhotoForm());
 		model.addAttribute("formHeader", "add");
 		model.addAttribute("message", res);
 		
@@ -75,7 +79,7 @@ public class PhotoAddController {
 	}
 	
 	@RequestMapping(value="/admin/addPhoto", method=RequestMethod.POST)
-	public String addPhotoPost(@ModelAttribute @Valid Photo photo, BindingResult bindingResult,
+	public String addPhotoPost(@ModelAttribute @Valid PhotoForm photoForm, BindingResult bindingResult,
 			@RequestParam(value="image", required=false) MultipartFile image, Model model) {
 		
 		if (bindingResult.hasErrors()) {
@@ -84,7 +88,7 @@ public class PhotoAddController {
         }
 		
 		try {
-			photoService.add(photo, image);
+			photoService.add(photoFormConverter.convert(photoForm), image);
 		} catch (ImageUploadException e) {
 			bindingResult.reject(e.getMessage());
 			model.addAttribute("formHeader", "add");
@@ -93,11 +97,11 @@ public class PhotoAddController {
 		
 		model.addAttribute("actionResponse", "addSuccess");
 		
-		return "redirect:/admin/addPhoto/" + photo.getCid();
+		return "redirect:/admin/addPhoto/" + photoForm.getCid();
 	}
 	
 	@RequestMapping(value="/admin/addPhoto/{categoryId}", method=RequestMethod.POST)
-	public String addPhotoWithCategoryPost(@ModelAttribute @Valid Photo photo, BindingResult bindingResult,
+	public String addPhotoWithCategoryPost(@ModelAttribute @Valid PhotoForm photoForm, BindingResult bindingResult,
 			@RequestParam(value="image", required=false) MultipartFile image,
 			@PathVariable(value="categoryId") int categoryId, Model model) {
 		
@@ -107,7 +111,7 @@ public class PhotoAddController {
         }
 		
 		try {
-			photoService.add(photo, image);
+			photoService.add(photoFormConverter.convert(photoForm), image);
 		} catch (ImageUploadException e) {
 			bindingResult.reject(e.getMessage());
 			model.addAttribute("formHeader", "add");

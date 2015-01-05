@@ -1,4 +1,4 @@
-package pl.jiro.webapp.admin.category;
+package pl.jiro.webapp.admin.category.controllers;
 
 import java.util.List;
 

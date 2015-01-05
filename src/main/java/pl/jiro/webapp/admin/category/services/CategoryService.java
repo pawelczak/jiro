@@ -11,7 +11,7 @@ import pl.jiro.webapp.admin.photo.services.PhotoService;
  * @author Łukasz Pawełczak
  */
 @Service
-public class CategoryDeleteService {
+public class CategoryService {
 
 	
 	@Autowired
@@ -23,8 +23,15 @@ public class CategoryDeleteService {
 
 	//------------------------ LOGIC --------------------------
 	
-	public void delete(Category category) {
+	public void delete(int id) {
+		Category category = categoryRepository.findCategoryById(id);
 		categoryRepository.deleteCategory(category);
 		photoDeleteService.deleteAllByCategoryId(category.getId());
+	}
+	
+	public void changeVisible(int id, boolean visible) {
+		Category category = categoryRepository.findCategoryById((int)id);
+		category.setVisible(visible);
+		categoryRepository.editCategory(category);
 	}
 }

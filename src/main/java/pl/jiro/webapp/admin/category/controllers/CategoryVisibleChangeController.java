@@ -1,4 +1,4 @@
-package pl.jiro.webapp.admin.category;
+package pl.jiro.webapp.admin.category.controllers;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -6,8 +6,7 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
-import pl.jiro.persistence.model.Category;
-import pl.jiro.persistence.repository.CategoryRepository;
+import pl.jiro.webapp.admin.category.services.CategoryService;
 
 /**
  * @author Łukasz Pawełczak
@@ -16,7 +15,7 @@ import pl.jiro.persistence.repository.CategoryRepository;
 public class CategoryVisibleChangeController {
 
 	@Autowired
-	private CategoryRepository categoryRepository;
+	private CategoryService categoryService;
 
 	
 	//------------------------ LOGIC --------------------------
@@ -24,11 +23,7 @@ public class CategoryVisibleChangeController {
 	@RequestMapping("/admin/category/visibleChange")
 	public String visilePhoto(@RequestParam long id, @RequestParam boolean visibility, Model model) {
 
-		Category category = categoryRepository.findCategoryById((int)id);
-		
-		category.setVisible(visibility);
-		
-		categoryRepository.editCategory(category);
+		categoryService.changeVisible((int)id, visibility);
 		
 		return "redirect:/admin/categoryList";
 	}

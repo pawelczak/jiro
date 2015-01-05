@@ -25,7 +25,7 @@
   <div class="panel-heading"><spring:message code="photo.header.${formHeader}" /></div>
   <div class="panel-body">
 
-	<form:form modelAttribute="photo" method="POST" class="form-horizontal" enctype="multipart/form-data" >
+	<form:form modelAttribute="photoForm" method="POST" class="form-horizontal" enctype="multipart/form-data" >
 		<form:errors path="*" />
 		<%-- <form:errors path="image" /> --%>  
 		

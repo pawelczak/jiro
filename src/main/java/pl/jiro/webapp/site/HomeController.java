@@ -8,6 +8,11 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import pl.jiro.persistence.repository.PreviewPhotoRepository;
 import pl.jiro.webapp.gallery.GalleryListService;
 
+/**
+ * 
+ * @author Łukasz Pawełczak
+ *
+ */
 @Controller
 public class HomeController {
 	

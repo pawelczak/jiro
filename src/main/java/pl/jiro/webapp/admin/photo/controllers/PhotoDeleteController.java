@@ -1,9 +1,10 @@
-package pl.jiro.webapp.admin.photo;
+package pl.jiro.webapp.admin.photo.controllers;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.SessionAttributes;
 
@@ -16,8 +17,8 @@ import pl.jiro.webapp.admin.photo.services.PhotoService;
  */
 @Controller
 @SessionAttributes("sessionCid")
-public class PhotoChangeFeaturedController {
-
+public class PhotoDeleteController {
+	
 	
 	@Autowired
 	private PhotoRepository photoRepository;
@@ -25,13 +26,16 @@ public class PhotoChangeFeaturedController {
 	@Autowired
 	private PhotoService photoService;
 	
+	
 	//------------------------ LOGIC --------------------------
 	
-	@RequestMapping("/admin/featurePhoto")
-	public String featurePhoto(@RequestParam long id, @RequestParam boolean status, Model model) {
+	@RequestMapping(value="/admin/deletePhoto", method=RequestMethod.POST)
+	public String deletePhoto(@RequestParam long id, Model model) {
 		Photo photo = photoRepository.findPhotoById(id);
 		
-		photoService.setFeaturedStatus(photo, status);
+		photoService.delete(photo);
+
+		model.addAttribute("actionResponse", "deleteSuccess");
 		
 		return "redirect:/admin/photoList/" + String.valueOf(photo.getCid());
 	}
