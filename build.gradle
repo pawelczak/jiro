@@ -2,6 +2,7 @@ apply plugin: 'java'
 apply plugin: 'war'
 apply plugin: 'eclipse'
 apply plugin: 'eclipse-wtp'
+apply plugin: 'maven'
 
 repositories {
     mavenLocal()
@@ -67,4 +68,23 @@ buildscript {
     dependencies {
 
     }
+}
+
+task createPom  {
+	pom {
+		project {
+			groupId 'pl.jiro'
+			artifactId 'jiro'
+			version '1.0.0-SNAPSHOT'
+
+			inceptionYear '2015'
+			licenses {
+				license {
+					name 'The Apache Software License, Version 2.0'
+					url 'http://www.apache.org/licenses/LICENSE-2.0.txt'
+					distribution 'repo'
+				}
+			}
+		}
+	}.writeTo("pom.xml")
 }
