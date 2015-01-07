@@ -1,8 +1,10 @@
 .*
 !.gitignore
 !.gitkeep
+!.build.gradle
 */build
 */bin
 */test-bin
 /build/
 /bin/
+/target/
