@@ -21,7 +21,7 @@
 		<div class="col-md-4">
 			<div class="image-title">${photo.title}</div> 
 			<div class="image-frame" >
-				<img id="gi-${status.index}" class="gallery-image" src="${photoPath}/photos/${photo.src}" width="100%" data-title="${photo.title}" />
+				<img id="gi-${status.index}" class="gallery-image" src="${photoPath}photos/${photo.src}" width="100%" data-title="${photo.title}" />
 			</div>
 		</div>
 	

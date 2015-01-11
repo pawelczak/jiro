@@ -122,7 +122,7 @@
 				</form>
 			</c:if>
 		</td>
-		<td><img src="${photoPath}/photos/${photo.src}" height="40" /></td>
+		<td><img src="${photoPath}photos/${photo.src}" height="40" /></td>
 		<td>${photo.description}</td>
 		<td class="table-form" >
 			<form method="GET" action="${contextPath}/admin/editPhoto" >
