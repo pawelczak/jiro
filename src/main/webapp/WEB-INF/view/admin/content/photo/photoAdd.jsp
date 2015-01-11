@@ -1,6 +1,8 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <%@ include file="/WEB-INF/view/common/taglibs.jsp" %>
 
+
+
 <c:if test="${!empty message}" >
 	<c:choose >
 		<c:when test="${message == 'addSuccess'}">
@@ -25,19 +27,30 @@
   <div class="panel-heading"><spring:message code="photo.header.${formHeader}" /></div>
   <div class="panel-body">
 
+
 	<form:form modelAttribute="photoForm" method="POST" class="form-horizontal" enctype="multipart/form-data" >
 		<form:errors path="*" />
-		<%-- <form:errors path="image" /> --%>  
+		
 		
 		<div class="form-group">
 			<spring:message code='category' var='springCat' />
 		    <label for="inputName" class="col-sm-2 control-label"><c:out value="${springCat}" /></label>
 		    <div class="col-sm-5">
-		    <form:select path="cid" class="form-control">
-		    	<c:forEach var="category" items="${categories}" >
-		    		<option value="${category.id}" ${ photo.cid == category.id || category.id == categoryId ? 'selected' : '' } >${category.name}</option>
-		    	</c:forEach>
-		    </form:select>
+		    
+		    <c:choose>
+		    	<c:when test="${!empty categories}" >
+			    	<form:select path="cid" class="form-control">
+				    	<c:forEach var="category" items="${categories}" >
+				    		<option value="${category.id}" ${ photo.cid == category.id || category.id == categoryId ? 'selected' : '' } >${category.name}</option>
+				    	</c:forEach>
+				    </form:select>
+		    	</c:when>
+		    	<c:otherwise>
+		    		<div>
+		    			Brak Kategorii
+		    		</div>
+		    	</c:otherwise>
+		    </c:choose>
 		    </div>
 	 	</div>
 		<div class="form-group">
@@ -60,12 +73,15 @@
 	    	  <input name="image" type="file" class="form-control" id="inputName" placeholder="${springSrc}" />
 		    </div>
 	 	</div>
+	 	
+	 	<%--
 	 	<div class="form-group">
 		    <label for="inputName" class="col-sm-2 control-label"><spring:message code='visibility' /></label>
 		    <div class="col-sm-10">
 	    	  <form:checkbox path="visible" class="" value="1" ></form:checkbox>
 		    </div>
 	 	</div>
+	 	--%>
 	 	<div class="form-group">
 	 		<spring:message code='desc' var='springDesc' />
 		    <label for="inputDesc" class="col-sm-2 control-label"><spring:message code='desc' />:</label>
@@ -73,6 +89,7 @@
 	    	  <form:textarea path="description" class="form-control" id="inputDesc" placeholder="${springDesc}" ></form:textarea>
 		    </div>
 	 	</div>
+	 	
 	    <div class="form-group">
 		    <div class="col-sm-offset-2 col-sm-10">
 		    
@@ -90,8 +107,9 @@
 		</div>
 		
 	</form:form>
-
+ 
   </div>
 </div>
 
 
+ 

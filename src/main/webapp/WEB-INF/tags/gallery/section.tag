@@ -16,7 +16,7 @@
 			<div class="col-md-4">
 				<div class="added-item">
 					<div class="item-title"><c:out value="${gallery.category.name}" /></div>	
-					<img src="${contextPath}/photos/${gallery.photo.src}" />
+					<img src="${photoPath}/photos/${gallery.photo.src}" />
 					<div class="item-desc">
 						<c:out value="${gallery.category.description}" />
 					</div>

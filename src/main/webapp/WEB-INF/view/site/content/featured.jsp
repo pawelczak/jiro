@@ -14,7 +14,7 @@
 			<div class="image-desc" >${photo.title}</div>
 		</div>
 		<div class="image-frame">
-			<img src="${contextPath}/photos/${photo.src}" width="100%" />
+			<img src="${photoPath}/photos/${photo.src}" width="100%" />
 		</div>
 		
 	</c:forEach>

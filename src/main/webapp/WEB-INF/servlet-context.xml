@@ -81,6 +81,7 @@
    <mvc:resources mapping="/photos/**" location="/photos/"/>
    <mvc:resources mapping="/previewPhotos/**" location="/previewPhotos/"/>
    <mvc:resources mapping="/static/**" location="/WEB-INF/static/"/>
+   <mvc:resources mapping="/robots.txt" location="/WEB-INF/static/robots.txt"/>
    
   
   <beans:bean id="messageSource"

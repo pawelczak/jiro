@@ -9,7 +9,7 @@
         
         	<c:forEach var="photo" items="${photos}">
         		<div class="inside-border">
-	            	<img u="image" src="${contextPath}/previewPhotos/${photo.src}" />
+	            	<img u="image" src="${photoPath}/previewPhotos/${photo.src}" />
 	            	<c:if test="${photo.description != '' }" >
 	            		<div class="jssor-caption" ><c:out value="${photo.description}" /></div>
 	            	</c:if>

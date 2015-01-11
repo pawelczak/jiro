@@ -49,12 +49,14 @@
 	    	  <input name="image" type="file" class="form-control" id="inputName" placeholder="${springSrc}" />
 		    </div>
 	 	</div>
+	 	<%--
 	 	<div class="form-group">
 		    <label for="inputName" class="col-sm-2 control-label"><spring:message code='visibility' /></label>
 		    <div class="col-sm-10">
 	    	  <form:checkbox path="visible" class="" value="1" ></form:checkbox>
 		    </div>
 	 	</div>
+	 	 --%>
 	 	<div class="form-group">
 	 		<spring:message code='desc' var='springDesc' />
 		    <label for="inputDesc" class="col-sm-2 control-label"><spring:message code='desc' />:</label>

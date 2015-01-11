@@ -4,7 +4,7 @@
 <!DOCTYPE HTML>
 <html class="no-js" >
   <head>
-   
+  	<meta name="robots" content="noindex, nofollow" >
     <c:set var="contextPath" value="${pageContext.request.contextPath}" scope="session"></c:set>  
     
 	

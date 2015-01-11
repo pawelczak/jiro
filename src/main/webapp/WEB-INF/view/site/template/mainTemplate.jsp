@@ -4,8 +4,10 @@
 <!DOCTYPE HTML>
 <html class="no-js" >
   <head>
+  	<meta name="robots" content="noindex, nofollow" >
   
     <c:set var="contextPath" value="${pageContext.request.contextPath}" scope="session"></c:set>  
+    <c:set var="photoPath" value="${contextPath}/.." scope="session"></c:set>  
     
   <%--  
     <c:set var="DATE_PATTERN" value="dd.MM.yyyy" scope="session"></c:set>  

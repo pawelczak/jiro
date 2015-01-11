@@ -4,8 +4,10 @@
 <!DOCTYPE HTML>
 <html class="no-js" >
   <head>
+    <meta name="robots" content="noindex, nofollow" >
     
     <c:set var="contextPath" value="${pageContext.request.contextPath}" scope="session"></c:set>  
+    <c:set var="photoPath" value="${contextPath}/.." scope="session"></c:set>  
     
 	
     <%@ include file="/WEB-INF/view/admin/static/css.jsp"%>
