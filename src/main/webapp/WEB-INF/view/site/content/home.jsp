@@ -50,16 +50,19 @@
 		<div class="sh-bottom row " >
 			<div class="col-md-4" >
 				<div class="teaser" >
-				
-					<div class="block featured"></div>
-				
+					<a href="${contextPath}/featured">
+						<div class="block featured"></div>
+					</a>
+					
 					<p><spring:message code="home.featured" /></p>
 					<p>Lorem ipsum dolor sit amet, conse ctetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis </p>
 				</div>
 			</div>
 			<div class="col-md-4" >
 				<div class="teaser" >
-					<div class="block gallery"></div>
+					<a href="${contextPath}/gallery">
+						<div class="block gallery"></div>
+					</a>
 				
 					<p><spring:message code="home.gallery" /></p>
 					<p>Lorem ipsum dolor sit amet, conse ctetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis </p>
@@ -67,7 +70,10 @@
 			</div>
 			<div class="col-md-4" >
 				<div class="teaser" >
-					<div class="block contact"></div>
+					<a href="${contextPath}/contact">
+						<div class="block contact"></div>
+					</a>
+					
 					<p><spring:message code="home.contact" /></p>
 					<p>Lorem ipsum dolor sit amet, cons ectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis </p>
 				</div>

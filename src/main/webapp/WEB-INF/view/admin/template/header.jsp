@@ -9,8 +9,11 @@
     </div>
     <div class="navbar-collapse collapse">
       <ul class="nav navbar-nav">
+      	<%--
         <li ><a href="${contextPath}/admin"><spring:message code='home' /></a></li>
         <li><a href="${contextPath}/admin/article"><spring:message code='articles' /></a></li>
+         --%>
+        
         <li class="dropdown">
           <a data-toggle="dropdown" class="dropdown-toggle" href="#"><spring:message code='categories' /><span class="caret"></span></a>
           <ul role="menu" class="dropdown-menu">
