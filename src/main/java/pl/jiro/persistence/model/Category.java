@@ -23,6 +23,8 @@ public class Category {
 	
 	private boolean visible = false;
 	
+	private long views;
+	
 	/*
 	@DateTimeFormat(pattern=FormatConst.DATE_FORMAT_PATTERN)
 	private Date addDate;
@@ -57,6 +59,10 @@ public class Category {
 	public boolean getVisible() {
 		return visible;
 	}
+	
+	public long getViews() {
+		return views;
+	}
 	/*
 	public Date getAddDate() {
 		return addDate;
@@ -83,6 +89,10 @@ public class Category {
 	
 	public void setVisible(boolean visible) {
 		this.visible = visible;
+	}
+	
+	public void setViews(long views) {
+		this.views = views;
 	}
 	
 	/*

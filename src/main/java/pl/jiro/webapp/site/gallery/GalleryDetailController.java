@@ -10,8 +10,8 @@ import pl.jiro.persistence.repository.CategoryRepository;
 import pl.jiro.persistence.repository.PhotoRepository;
 
 
-/*
- * @author £ukasz Pawe≥czak
+/**
+ * @author ≈Åukasz Pawe≈Çczak
  */
 @Controller
 public class GalleryDetailController {
@@ -23,11 +23,15 @@ public class GalleryDetailController {
 	@Autowired
 	private PhotoRepository photoRepository;
 	
+	@Autowired
+	private GalleryVoteService galleryVoteService;
 	
 	//------------------------ LOGIC --------------------------	
 	
 	@RequestMapping("/gallery/{categoryId}")
 	public String detailGallery(@PathVariable("categoryId") Integer categoryId, Model model) {
+		
+		galleryVoteService.voteUp(categoryId);
 		
 		model.addAttribute("category", categoryRepository.findCategoryById(categoryId));
 		model.addAttribute("photos", photoRepository.findVisibleByCategoryId(categoryId));

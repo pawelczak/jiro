@@ -40,7 +40,8 @@ body {
 
 
 body {
-  background: url("../image/noise.jpg") repeat scroll 0 0 rgba(0, 0, 0, 0);
+  /*background: url("../image/noise.jpg") repeat scroll 0 0 rgba(0, 0, 0, 0);*/
+  background: url("../image/background/mooning.png") repeat scroll 0 0 rgba(0, 0, 0, 0);
   font-family: "Noto Sans", sans-serif; }
 
 .container {
@@ -278,6 +279,7 @@ header {
 }
 
 .page-header {
+	border: 0px;
 	margin-top: 120px;
 	position: relative;
 
