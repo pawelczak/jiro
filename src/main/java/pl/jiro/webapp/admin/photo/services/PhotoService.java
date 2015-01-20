@@ -32,6 +32,9 @@ public class PhotoService {
 	
 	public boolean add(Photo photo, MultipartFile image) {
 		photo.setSrc(" ");
+		photo.setPosition(0);
+		photo.setFeatured(false);
+		photo.setVisible(true);
 		photoRepository.addPhoto(photo);
 		
 		try {
@@ -51,11 +54,21 @@ public class PhotoService {
 	}
 	
 	public void edit(Photo photo, MultipartFile image) {
+		Photo basePhoto = photoRepository.findPhotoById(photo.getId());
+		
+		photo.setPosition(basePhoto.getPosition());
+		photo.setFeatured(basePhoto.getFeatured());
+		photo.setVisible(basePhoto.getVisible());
 		
 		editPhoto(photo, image);
 	}
 	
 	public void edit(Photo photo, MultipartFile image, String imageUploaded) {
+		Photo basePhoto = photoRepository.findPhotoById(photo.getId());
+		
+		photo.setPosition(basePhoto.getPosition());
+		photo.setFeatured(basePhoto.getFeatured());
+		photo.setVisible(basePhoto.getVisible());
 		photo.setSrc(imageUploaded);
 		
 		editPhoto(photo, image);
@@ -118,4 +131,5 @@ public class PhotoService {
 		
 		photoRepository.editPhoto(photo);
 	}
+	
 }

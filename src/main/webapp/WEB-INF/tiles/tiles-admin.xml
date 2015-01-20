@@ -45,6 +45,10 @@
 		<put-attribute name="content" value="/WEB-INF/view/admin/content/photo/photoAdd.jsp" />  
     </definition>
     
+    <definition name="photoAddMany" extends="admin">
+		<put-attribute name="content" value="/WEB-INF/view/admin/content/photo/photoAddMany.jsp" />  
+    </definition>
+    
     <definition name="previewPhotoList" extends="admin">
 		<put-attribute name="content" value="/WEB-INF/view/admin/content/previewPhoto/previewPhotoList.jsp" />  
     </definition>

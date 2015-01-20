@@ -6,6 +6,11 @@ import org.junit.Test;
 
 import pl.jiro.persistence.model.Photo;
 
+/**
+ * 
+ * @author Łukasz Pawełczak
+ *
+ */
 public class PhotoFormConverterTest {
 
 	
@@ -23,9 +28,6 @@ public class PhotoFormConverterTest {
 		expected.setCid(13);
 		expected.setTitle("Tytul");
 		expected.setSrc("/home/user/desktop/etc");
-		expected.setFeatured(true);
-		expected.setVisible(false);
-		expected.setPosition(1);
 		expected.setDescription("Opis");
 		
 		//when
@@ -36,9 +38,6 @@ public class PhotoFormConverterTest {
 		assertEquals(expected.getCid(), actual.getCid());
 		assertEquals(expected.getTitle(), actual.getTitle());
 		assertEquals(expected.getSrc(), actual.getSrc());
-		assertEquals(expected.getFeatured(), actual.getFeatured());
-		assertEquals(expected.getVisible(), actual.getVisible());
-		assertEquals(expected.getPosition(), actual.getPosition());
 		assertEquals(expected.getDescription(), actual.getDescription());
 	}
 
@@ -51,9 +50,6 @@ public class PhotoFormConverterTest {
 		expected.setCid(13);
 		expected.setTitle("Tytul");
 		expected.setSrc("/home/user/desktop/etc");
-		expected.setFeatured(true);
-		expected.setVisible(false);
-		expected.setPosition(1);
 		expected.setDescription("Opis");
 		
 		//when
@@ -64,9 +60,6 @@ public class PhotoFormConverterTest {
 		assertEquals(expected.getCid(), actual.getCid());
 		assertEquals(expected.getTitle(), actual.getTitle());
 		assertEquals(expected.getSrc(), actual.getSrc());
-		assertEquals(expected.getFeatured(), actual.getFeatured());
-		assertEquals(expected.getVisible(), actual.getVisible());
-		assertEquals(expected.getPosition(), actual.getPosition());
 		assertEquals(expected.getDescription(), actual.getDescription());
 	}
 }

@@ -53,13 +53,6 @@
 		    </c:choose>
 		    </div>
 	 	</div>
-		<div class="form-group">
-			<spring:message code='title' var='springTit' />
-		    <label for="inputName" class="col-sm-2 control-label"><spring:message code='title' /></label>
-		    <div class="col-sm-10">
-	    	  <form:input path="title" class="form-control" id="inputName" placeholder="${springTit}" ></form:input>
-		    </div>
-	 	</div>
 	 	<div class="form-group">
 	 		<spring:message code='src' var='springSrc' />
 		    <label for="inputName" class="col-sm-2 control-label"><spring:message code='src' /></label>
@@ -70,23 +63,8 @@
 		    	</c:if>
 		    
 		    
-	    	  <input name="image" type="file" class="form-control" id="inputName" placeholder="${springSrc}" multiple />
-		    </div>
-	 	</div>
-	 	
-	 	<%--
-	 	<div class="form-group">
-		    <label for="inputName" class="col-sm-2 control-label"><spring:message code='visibility' /></label>
-		    <div class="col-sm-10">
-	    	  <form:checkbox path="visible" class="" value="1" ></form:checkbox>
-		    </div>
-	 	</div>
-	 	--%>
-	 	<div class="form-group">
-	 		<spring:message code='desc' var='springDesc' />
-		    <label for="inputDesc" class="col-sm-2 control-label"><spring:message code='desc' />:</label>
-		    <div class="col-sm-6">
-	    	  <form:textarea path="description" class="form-control" id="inputDesc" placeholder="${springDesc}" ></form:textarea>
+	    	  <input name="files" type="file" class="form-control" id="inputName" placeholder="${springSrc}" multiple />
+	    	  
 		    </div>
 	 	</div>
 	 	

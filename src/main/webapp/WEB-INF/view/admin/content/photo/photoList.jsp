@@ -39,9 +39,14 @@
 
 
 <div class="form-group">
-	<a class="button" href="${contextPath}/admin/addPhoto/${categoryId}">
+	<a class="button button-nav" href="${contextPath}/admin/addPhoto/${categoryId}">
 		<img src="${contextPath}/static/image/icons/admin/add-image.png" />
 		<spring:message code='photo.add' />
+	</a>
+	
+	<a class="button button-nav" href="${contextPath}/admin/addManyPhoto/${categoryId}">
+		<img src="${contextPath}/static/image/icons/admin/add-image.png" />
+		<spring:message code='photo.addMany' />
 	</a>
 </div>
 
