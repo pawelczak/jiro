@@ -38,4 +38,15 @@ public class GalleryDetailController {
 		
 		return "galleryDetail";
 	}
+	
+	@RequestMapping("/test")
+	public String testGallery(Model model) {
+		
+	
+		model.addAttribute("photos", photoRepository.findVisibleByCategoryId(35));
+		
+		return "test";
+	}
+	
+	
 }

@@ -2,3 +2,5 @@
 <link type="text/css"  rel="stylesheet" href="${contextPath}/static/css/bootstrap.min.css"/>    
 <link type="text/css"  rel="stylesheet" href="${contextPath}/static/css/styles.css"/>
 <link type="text/css"  rel="stylesheet" href="${contextPath}/static/css/jssor.css"/>
+<link type="text/css"  rel="stylesheet" href="${contextPath}/static/css/lib/photoswipe.css"/>
+<link type="text/css"  rel="stylesheet" href="${contextPath}/static/css/lib/default-skin/default-skin.css"/>

@@ -4,7 +4,7 @@
 <!DOCTYPE HTML>
 <html class="no-js" >
   <head>
-    <meta name="robots" content="noindex, nofollow" >
+  	<%@ include file="/WEB-INF/view/common/meta.jsp"%>    
     
     <c:set var="contextPath" value="${pageContext.request.contextPath}" scope="session"></c:set>  
     <c:set var="photoPath" value="${contextPath}/image?fileName=" scope="session"></c:set>  
@@ -12,8 +12,6 @@
 	
     <%@ include file="/WEB-INF/view/admin/static/css.jsp"%>
     <%@ include file="/WEB-INF/view/admin/static/javascript.jsp"%>
-    <%@ include file="/WEB-INF/view/common/meta.jsp"%>
-    
     
     <title>Fotografia Waldemar Pawelczak</title>
 

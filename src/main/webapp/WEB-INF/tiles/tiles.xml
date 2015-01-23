@@ -3,12 +3,28 @@
     
     <!-- ************* Main template definition -->
     <definition name="main" template="/WEB-INF/view/site/template/mainTemplate.jsp">
+    	<put-attribute name="jsLibs" value="jsLibsTemplate" />
         <put-attribute name="header" value="/WEB-INF/view/site/template/header.jsp" />
+        <put-attribute name="content" value="" />
         <put-attribute name="footer" value="/WEB-INF/view/site/template/footer.jsp" />
     </definition>
 
     
     <definition name="test" template="/WEB-INF/view/home.jsp">
+    </definition>
+    
+    <!-- ************* Javascript Libs -->
+    
+    <definition name="jsLibsTemplate" template="/WEB-INF/view/site/lib/jsLibsTemplate.jsp">
+        <put-attribute name="jsLibsSpecific" value="" />
+    </definition>
+    
+    <definition name="jsLibsHome" extends="jsLibsTemplate">
+        <put-attribute name="jsLibsSpecific" value="/WEB-INF/view/site/lib/jsLibsHome.jsp" />
+    </definition>
+    
+   	<definition name="jsLibsPhotoGallery" extends="jsLibsTemplate">
+        <put-attribute name="jsLibsSpecific" value="/WEB-INF/view/site/lib/jsLibsPhotoGallery.jsp" />
     </definition>
     
     <!-- ************* Simple template definition -->
@@ -20,6 +36,7 @@
     
     <definition name="home" extends="main">
 		<put-attribute name="content" value="/WEB-INF/view/site/content/home.jsp" />  
+		<put-attribute name="jsLibs" value="jsLibsHome" />
     </definition>
     
      <definition name="featured" extends="main">
@@ -31,9 +48,13 @@
     </definition>
     
     <definition name="galleryDetail" extends="main">
-		<put-attribute name="content" value="/WEB-INF/view/site/content/galleryDetail.jsp" />  
+		<put-attribute name="content" value="/WEB-INF/view/site/content/galleryDetail.jsp" />
+		<put-attribute name="jsLibs" value="jsLibsPhotoGallery" />  
     </definition>
     
+    <definition name="test" extends="main">
+		<put-attribute name="content" value="/WEB-INF/view/site/content/test.jsp" />  
+    </definition>
     
      <definition name="contact" extends="main">
 		<put-attribute name="content" value="/WEB-INF/view/site/content/contact.jsp" />  
