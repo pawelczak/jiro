@@ -18,29 +18,6 @@ $(document).ready(function() {
 			    title: '${photo.title}'
 			},
 	    </c:forEach>
-	             
-        /*
-	    {
-	        src: '${photoPath}photos/${photos[0].src}',
-	        w: 1200,
-	        h: 900
-	    },
-	    {
-	        src: '${photoPath}photos/${photos[1].src}',
-	        w: 1200,
-	        h: 900
-	    },
-	    {
-	        src: '${photoPath}photos/${photos[2].src}',
-	        w: 1200,
-	        h: 1200
-	    },
-	    {
-	        src: '${photoPath}photos/${photos[3].src}',
-	        w: 1200,
-	        h: 1200
-	    }
-	    */
 	];
 	
 	// define options (if needed)

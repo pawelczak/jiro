@@ -17,7 +17,7 @@
     
     <tiles:insertAttribute name="jsLibs" />
     
-    <title>Fotografia Waldemar Pawełczak</title>
+    <%@include file="/WEB-INF/view/site/template/pageTitle.jsp"%>
 
   </head>
   <body>

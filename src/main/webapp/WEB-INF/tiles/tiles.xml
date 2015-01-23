@@ -3,6 +3,7 @@
     
     <!-- ************* Main template definition -->
     <definition name="main" template="/WEB-INF/view/site/template/mainTemplate.jsp">
+    	<put-attribute name="title" value="" />
     	<put-attribute name="jsLibs" value="jsLibsTemplate" />
         <put-attribute name="header" value="/WEB-INF/view/site/template/header.jsp" />
         <put-attribute name="content" value="" />
@@ -37,31 +38,33 @@
     <definition name="home" extends="main">
 		<put-attribute name="content" value="/WEB-INF/view/site/content/home.jsp" />  
 		<put-attribute name="jsLibs" value="jsLibsHome" />
+		<put-attribute name="title" value="pageTitle.home" />
     </definition>
     
      <definition name="featured" extends="main">
 		<put-attribute name="content" value="/WEB-INF/view/site/content/featured.jsp" />  
+		<put-attribute name="title" value="pageTitle.featured" />
     </definition>
     
      <definition name="gallery" extends="main">
 		<put-attribute name="content" value="/WEB-INF/view/site/content/gallery.jsp" />  
+		<put-attribute name="title" value="pageTitle.gallery" />
     </definition>
     
     <definition name="galleryDetail" extends="main">
 		<put-attribute name="content" value="/WEB-INF/view/site/content/galleryDetail.jsp" />
-		<put-attribute name="jsLibs" value="jsLibsPhotoGallery" />  
-    </definition>
-    
-    <definition name="test" extends="main">
-		<put-attribute name="content" value="/WEB-INF/view/site/content/test.jsp" />  
+		<put-attribute name="jsLibs" value="jsLibsPhotoGallery" /> 
+		<put-attribute name="title" value="pageTitle.photoGallery" /> 
     </definition>
     
      <definition name="contact" extends="main">
 		<put-attribute name="content" value="/WEB-INF/view/site/content/contact.jsp" />  
+		<put-attribute name="title" value="pageTitle.contact" />
     </definition>
     
 	<definition name="links" extends="main">
 		<put-attribute name="content" value="/WEB-INF/view/site/content/links.jsp" />  
+		<put-attribute name="title" value="pageTitle.links" />
     </definition>
     
     <!-- ************** Errors -->
