@@ -42,7 +42,7 @@ public class PhotoForm {
 	public String getSrc() {
 		return src;
 	}
-	
+
 	public String getDescription() {
 		return description;
 	}
@@ -65,7 +65,7 @@ public class PhotoForm {
 	public void setSrc(String src) {
 		this.src = src;
 	}	
-	
+
 	public void setDescription(String desc) {
 		this.description = desc;
 	}

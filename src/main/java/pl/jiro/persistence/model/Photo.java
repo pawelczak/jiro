@@ -24,6 +24,10 @@ public class Photo extends BasicDataSource {
 	
 	private String src;
 	
+	private int height;
+	
+	private int width;
+	
 	private boolean featured = false;
 	
 	private boolean visible = true;
@@ -58,6 +62,14 @@ public class Photo extends BasicDataSource {
 	
 	public String getSrc() {
 		return src;
+	}
+	
+	public int getHeight() {
+		return height;
+	}
+	
+	public int getWidth() {
+		return width;
 	}
 	
 	public boolean getVisible() {
@@ -104,6 +116,14 @@ public class Photo extends BasicDataSource {
 		this.src = src;
 	}	
 	
+	public void setHeight(int height) {
+		this.height = height;
+	} 
+	
+	public void setWidth(int width) {
+		this.width = width;
+	}
+		
 	public void setVisible(boolean vis) {
 		this.visible = vis;
 	}

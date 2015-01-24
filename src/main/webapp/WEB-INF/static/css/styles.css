@@ -366,6 +366,7 @@ header .nav > li > a:hover, header .nav > li > a:focus {
   .gallery-single .image-title {
     background: none repeat scroll 0 0 #fff;
     bottom: 25px;
+    display: none;
     left: 15px;
     margin: 0 5px;
     overflow: hidden;

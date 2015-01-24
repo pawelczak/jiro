@@ -1,5 +1,6 @@
 package pl.jiro.webapp.admin.photo.controllers;
 
+import java.io.IOException;
 import java.util.List;
 
 import javax.validation.Valid;
@@ -80,7 +81,7 @@ public class PhotoAddManyController {
 	
 	@RequestMapping(value="/admin/addManyPhoto", method=RequestMethod.POST)
 	public String addPhotoPost(@ModelAttribute @Valid PhotoManyFilesForm photoManyFilesForm, BindingResult bindingResult,
-			Model model) {
+			Model model) throws IOException {
 		
 		if (bindingResult.hasErrors()) {
 			model.addAttribute("formHeader", "add");
@@ -104,7 +105,7 @@ public class PhotoAddManyController {
 	
 	@RequestMapping(value="/admin/addManyPhoto/{categoryId}", method=RequestMethod.POST)
 	public String addPhotoWithCategoryPost(@ModelAttribute @Valid PhotoManyFilesForm photoManyFilesForm, BindingResult bindingResult,
-			@PathVariable(value="categoryId") int categoryId, Model model) {
+			@PathVariable(value="categoryId") int categoryId, Model model) throws IOException {
 		
 		if (bindingResult.hasErrors()) {
 			model.addAttribute("formHeader", "add");
@@ -130,7 +131,7 @@ public class PhotoAddManyController {
 	
 	//------------------------ PRIVATE --------------------------
 	
-	private void addPhotos(PhotoManyFilesForm photoForm) {
+	private void addPhotos(PhotoManyFilesForm photoForm) throws IOException {
 		
 		List<PhotoWithImage> photoWithImages = photoManyFilesFormConverter.convert(photoForm);
 		

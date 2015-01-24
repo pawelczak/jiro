@@ -2,7 +2,7 @@
 <%@ include file="/WEB-INF/view/common/taglibs.jsp" %>
 
 
-<script type="text/javascript" >
+<script type="text/javascript">
 $(document).ready(function() {
 	
 	var pswpElement = document.querySelectorAll('.pswp')[0];
@@ -13,8 +13,8 @@ $(document).ready(function() {
 		<c:forEach items="${photos}"  var="photo" >
 	        {
 			    src: '${photoPath}photos/${photo.src}',
-			    w: 1400,
-			    h: 1200,
+			    w: '${photo.width}',
+			    h: '${photo.height}',
 			    title: '${photo.title}'
 			},
 	    </c:forEach>
@@ -41,8 +41,8 @@ $(document).ready(function() {
 		      	history: false,
 		      	focus: false,
 
-		        showAnimationDuration: 400,
-		        hideAnimationDuration: 400
+		        showAnimationDuration: 333,
+		        hideAnimationDuration: 333
 		        
 		    });
 			gallery.init();
@@ -51,11 +51,10 @@ $(document).ready(function() {
 	});
 		
 });	
-	
+
 </script>
 
-
-	<!-- Root element of PhotoSwipe. Must have class pswp. -->
+<!-- Root element of PhotoSwipe. Must have class pswp. -->
 <div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
 
     <!-- Background of PhotoSwipe. 

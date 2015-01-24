@@ -1,6 +1,11 @@
 package pl.jiro.webapp.admin.photo.services;
 
+import java.awt.image.BufferedImage;
+import java.io.File;
+import java.io.IOException;
 import java.util.List;
+
+import javax.imageio.ImageIO;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
@@ -30,7 +35,7 @@ public class PhotoService {
 	
 	//------------------------ LOGIC --------------------------
 	
-	public boolean add(Photo photo, MultipartFile image) {
+	public boolean add(Photo photo, MultipartFile image) throws IOException {
 		photo.setSrc(" ");
 		photo.setPosition(0);
 		photo.setFeatured(false);
@@ -42,6 +47,9 @@ public class PhotoService {
 				photoImageService.validateImage(image);
 				photoImageService.save(webContext + photo.getId() + ".jpg", image);
 				photo.setSrc(photo.getId() + ".jpg");
+				BufferedImage bufferedImage = ImageIO.read(new File(webContext + photo.getId() + ".jpg"));
+				photo.setWidth( bufferedImage.getWidth());
+				photo.setHeight(bufferedImage.getHeight());
 			}
 		} catch (ImageUploadException e) {
 			return false;
@@ -53,7 +61,7 @@ public class PhotoService {
 		return true;
 	}
 	
-	public void edit(Photo photo, MultipartFile image) {
+	public void edit(Photo photo, MultipartFile image) throws IOException {
 		Photo basePhoto = photoRepository.findPhotoById(photo.getId());
 		
 		photo.setPosition(basePhoto.getPosition());
@@ -63,7 +71,7 @@ public class PhotoService {
 		editPhoto(photo, image);
 	}
 	
-	public void edit(Photo photo, MultipartFile image, String imageUploaded) {
+	public void edit(Photo photo, MultipartFile image, String imageUploaded) throws IOException {
 		Photo basePhoto = photoRepository.findPhotoById(photo.getId());
 		
 		photo.setPosition(basePhoto.getPosition());
@@ -117,7 +125,7 @@ public class PhotoService {
 	
 	//------------------------ PRIVATE --------------------------
 	
-	private void editPhoto(Photo photo, MultipartFile image) {
+	private void editPhoto(Photo photo, MultipartFile image) throws IOException {
 		
 		if (image != null) {
 			if (!image.isEmpty()) {
@@ -126,6 +134,10 @@ public class PhotoService {
 				photoImageService.validateImage(image);
 				photoImageService.save(webContext + photo.getId() + ".jpg", image);
 				photo.setSrc(photo.getId() + ".jpg");
+				
+				BufferedImage bufferedImage = ImageIO.read(new File(webContext + photo.getId() + ".jpg"));
+				photo.setWidth( bufferedImage.getWidth());
+				photo.setHeight(bufferedImage.getHeight());
 			}
 		}
 		

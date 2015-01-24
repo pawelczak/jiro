@@ -1,5 +1,6 @@
 package pl.jiro.webapp.admin.photo.controllers;
 
+import java.io.IOException;
 import java.util.List;
 
 import javax.validation.Valid;
@@ -65,7 +66,7 @@ public class PhotoEditController {
 	public String editPhotoPost(@ModelAttribute @Valid PhotoForm photoForm, 
 			@RequestParam(value="image", required=false) MultipartFile image,
 			@RequestParam(value="image_uploaded", required=false) String imageUploaded,
-			BindingResult bindingResult, Model model) {
+			BindingResult bindingResult, Model model) throws IOException {
 		
 		
 		if (bindingResult.hasErrors()) {
