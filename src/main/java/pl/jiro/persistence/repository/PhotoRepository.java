@@ -70,6 +70,16 @@ public class PhotoRepository {
 		List photos = session.createQuery("from Photo where featured = 1").list();
 		return photos;
 	}
+	
+	@Transactional
+	public List<Photo> findFrontByCategoryId(Integer id) {
+		Session session = sessionFactory.getCurrentSession();
+		
+		Query query = session.createQuery("from Photo where cid = :categoryId and front = 1");
+		query.setParameter("categoryId", (long)id);
+		
+		return query.list();
+	}
 
 	@Transactional
 	public void addPhoto(Photo photo) {

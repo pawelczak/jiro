@@ -32,6 +32,8 @@ public class Photo extends BasicDataSource {
 	
 	private boolean visible = true;
 	
+	private boolean front = false;
+	
 	private int position;
 	
 	private String description;
@@ -74,6 +76,10 @@ public class Photo extends BasicDataSource {
 	
 	public boolean getVisible() {
 		return visible;
+	}
+	
+	public boolean getFront() {
+		return front;
 	}
 	
 	public boolean getFeatured() {
@@ -129,11 +135,15 @@ public class Photo extends BasicDataSource {
 	}
 	
 	public void setFeatured(boolean feat) {
-		featured = feat;
+		this.featured = feat;
+	}
+	
+	public void setFront(boolean front) {
+		this.front = front;
 	}
 	
 	public void setPosition(int pos) {
-		position = pos;
+		this.position = pos;
 	}
 	
 	public void setDescription(String desc) {

@@ -36,9 +36,7 @@
   
   <!-- 
   
-    <property name="url" value="jdbc:mysql://127.5.204.2:3306/jiro"/>
-    <property name="username" value="adminfRltHX5"/>
-    <property name="password" value="XuF96dBw3NYT"/>
+
     
   	<property name="url" value="jdbc:mysql://localhost:3306/jiro"/>
     <property name="username" value="root"/>

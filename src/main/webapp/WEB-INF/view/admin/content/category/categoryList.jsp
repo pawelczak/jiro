@@ -26,17 +26,23 @@
 	</c:choose>
 </c:if>
 
+<div class="form-group">
+	<a class="button button-nav" href="${contextPath}/admin/addCategory/${categoryId}">
+		<spring:message code='category.add' />
+	</a>
+</div>
+
 <table class="table table-bordered table-hover">
 	<tr>
 		<th width="20px">#</th>
 		<th><spring:message code='name' /></th>
-		<th width="24px"><img src="${contextPath}/static/image/icons/visible.png" /></th>
+		<th width="24px"><img src="${contextPath}/static/image/icons/visible.png" data-toggle="tooltip" data-placement="top" title="<spring:message code="category.tooltip.visibility" />" /></th>
 		<%--
 		<th><spring:message code='dateAdd' /></th>
 		<th><spring:message code='dateModification' /></th>
 		 --%>
 		<th><spring:message code='desc' /></th>
-		<th width="140"></th>
+		<th width="150"></th>
 	</tr>
 
 	<c:forEach var="category" items="${categories}" varStatus="status">	

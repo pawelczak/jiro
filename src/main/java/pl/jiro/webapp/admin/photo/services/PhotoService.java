@@ -40,6 +40,7 @@ public class PhotoService {
 		photo.setPosition(0);
 		photo.setFeatured(false);
 		photo.setVisible(true);
+		photo.setFront(false);
 		photoRepository.addPhoto(photo);
 		
 		try {
@@ -112,6 +113,15 @@ public class PhotoService {
 		photoRepository.editPhoto(photo);
 	}
 	
+	public void setFront(Photo photo, boolean front) {
+		if (front) {
+			clearFrontAllPhotoByCategory((int)photo.getCid());
+		}
+		
+		photo.setFront(front);
+		photoRepository.editPhoto(photo);
+	}
+	
 	public void switchPosition(Photo firstPhoto, Photo secondPhoto) {
 		int frstPhotoPosition = firstPhoto.getPosition();
 		
@@ -144,4 +154,13 @@ public class PhotoService {
 		photoRepository.editPhoto(photo);
 	}
 	
+	
+	private void clearFrontAllPhotoByCategory(int categoryId) {
+		List<Photo> photos = photoRepository.findByCategoryId(categoryId);
+		
+		for(Photo photo : photos) {
+			photo.setFront(false);
+			photoRepository.editPhoto(photo);
+		}
+	}
 }

@@ -45,15 +45,26 @@ public class GalleryListService {
 		List<Gallery> galleries = Lists.newArrayList();
 		
 		for (Category category : categories) {
-			List<Photo> photos = photoRepository.findVisibleByCategoryId(category.getId());
-			
-			if (photos.size() > 0) {
-				galleries.add(new Gallery(category, photos.get(0)));
-			} else {
-				galleries.add(new Gallery(category, new Photo()));
-			}			
+			galleries.add(new Gallery(category, findFrontPhoto(category.getId())));
 		}
 		
 		return galleries;
+	}
+	
+	private Photo findFrontPhoto(int galleryId) {
+		
+		List<Photo> frontPhotos = photoRepository.findFrontByCategoryId(galleryId);
+		
+		if (frontPhotos.size() == 0) {
+			List<Photo> photos = photoRepository.findVisibleByCategoryId(galleryId);
+			
+			if (photos.size() > 0) {
+				return photos.get(0);
+			} else {
+				return new Photo();
+			}
+		} else {
+			return frontPhotos.get(0);
+		}
 	}
 }

@@ -16,7 +16,7 @@ public class CategoryForm {
 	@Size(min=3, max=128, message="Nazwa kategorii musi składać się z 3 do 128 znaków.")
 	private String name;
 	
-	@Size(min=1, max=256, message="Opis kategorii może składać się maksymalnie z 256 znaków.")
+	@Size(min=0, max=256, message="Opis kategorii może składać się maksymalnie z 256 znaków.")
 	private String description;
 	
 	private boolean visible = false;

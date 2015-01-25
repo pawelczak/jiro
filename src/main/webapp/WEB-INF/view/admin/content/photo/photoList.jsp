@@ -55,7 +55,8 @@
 		<th width="20px">#</th>
 		<th><spring:message code='name' /></th>
 		<th width="24px"></th>
-		<th width="24px"><img src="${contextPath}/static/image/icons/visible.png" /></th>
+		<th width="24px"></th>
+		<th width="24px"><img src="${contextPath}/static/image/icons/visible.png"  data-toggle="tooltip" data-placement="top" title="<spring:message code="photo.tooltip.visibility" />" /></th>
 		<th width="24px"></th>
 		<th width="40" ><spring:message code='photo' /></th>
 		<th width="160"><spring:message code='desc' /></th>
@@ -85,6 +86,25 @@
 				</c:choose>
 				 
 			</form>
+		</td>
+		<td class="no-padding">
+			<form method="POST" action="${contextPath}/admin/photoChangeFront" id="form-visible-${status.index + 1}" >
+				<input type="hidden" name="id" value="${photo.id}" />
+				<input type="hidden" name="front" value="${!photo.front}" />
+
+				<c:choose>
+					<c:when test="${photo.front=='true'}" >
+						<button class="button-visible" >
+							<img src="${contextPath}/static/image/icons/admin/trophy-24.png" />
+						</button>
+					</c:when>
+					<c:otherwise>
+						<button class="button-visible" >
+							<img src="${contextPath}/static/image/icons/admin/trophy-24_grey.png" />
+						</button>
+					</c:otherwise>
+				</c:choose>
+			</form>			
 		</td>
 		<td class="no-padding">
 			<form method="POST" action="${contextPath}/admin/photoChangeVisibility" id="form-visible-${status.index + 1}" >
