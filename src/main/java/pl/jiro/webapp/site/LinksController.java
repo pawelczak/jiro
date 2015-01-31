@@ -15,7 +15,6 @@ public class LinksController {
 	
     @RequestMapping("/links")
     public String links(ModelMap model) {
-        
         return "links";
     }
 }
